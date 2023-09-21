@@ -1,5 +1,5 @@
 <template>
-  <q-header elevated class="bg-green-10 text-white" height-hint="98">
+  <q-header elevated class="text-white" :style="style" height-hint="98">
     <q-toolbar>
       <q-toolbar-title>
         Title
@@ -17,6 +17,12 @@
 </template>
 
 <script setup>
+  const yellow = '#f7d336'
+  const green = '#8ae99c'
+  const style = {
+
+    'background': `linear-gradient(15deg, ${yellow}, ${green})`
+  }
 </script>
 
 <style scoped>

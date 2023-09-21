@@ -9,7 +9,7 @@ const routes = [
     component: LayoutMain,
     children: [
       {
-        path: 'test',
+        path: '/',
         component: PHome
       }
     ]
