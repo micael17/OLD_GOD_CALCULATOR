@@ -10,9 +10,9 @@ import 'quasar/src/css/index.sass' // Import Quasar css
 import '@/assets/style/style.css'
 
 const pinia = createPinia()
-const myApp = createApp(App)
-myApp.use(Quasar, {})
-myApp.use(router)
-myApp.use(pinia)
+const app = createApp(App)
+app.use(Quasar, {})
+app.use(router)
+app.use(pinia)
 
-myApp.mount('#app')
+app.mount('#root')

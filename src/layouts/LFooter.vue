@@ -1,5 +1,5 @@
 <template>
-  <q-footer elevated class="bg-grey-8 text-white">
+  <q-footer elevated class="row justify-center items-start content-start bg-grey-8 text-white">
     <q-toolbar>
       <q-toolbar-title>
         <q-avatar>

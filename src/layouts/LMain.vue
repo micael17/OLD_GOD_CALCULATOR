@@ -1,7 +1,7 @@
 <template>
   <q-layout view="hhh lpR fff">
     <LHeader />
-    <q-page-container>
+    <q-page-container class="row justify-center items-start content-start">
       <slot />
     </q-page-container>
     <LFooter />

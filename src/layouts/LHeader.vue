@@ -1,5 +1,5 @@
 <template>
-  <q-header elevated class="text-white" :style="style" height-hint="98">
+  <q-header elevated class="row justify-center items-start content-start" :style="style" height-hint="98">
     <q-toolbar>
       <q-toolbar-title>
         Title
