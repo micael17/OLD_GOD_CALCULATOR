@@ -125,7 +125,7 @@ const onSubmit = () => {
   }
 
   localSupplyValue.value = result
-  localSupplyTaxValue.value = localSupplyValue.value * 1.1
+  localSupplyTaxValue.value = Math.trunc(localSupplyValue.value * 1.1)
   nhSupplyValue.value = Math.trunc(localSupplyValue.value * 1.07)
   nhSupplyTaxValue.value = Math.trunc(nhSupplyValue.value * 1.1)
 }
