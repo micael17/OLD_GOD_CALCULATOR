@@ -47,8 +47,17 @@
             filled
             disable
             type="number"
+            v-model="xValue"
+            label="x (더한금액)"
+            lazy-rules
+          />
+
+          <q-input
+            filled
+            disable
+            type="number"
             v-model="localSupplyValue"
-            label="지역공급가"
+            label="지역본부단가"
             lazy-rules
           />
 
@@ -57,7 +66,7 @@
             disable
             type="number"
             v-model="nhSupplyValue"
-            label="농협공급가"
+            label="농협단가"
             lazy-rules
           />
 
@@ -66,7 +75,7 @@
             disable
             type="number"
             v-model="localSupplyTaxValue"
-            label="지역공급가 + 부가세"
+            label="지역본부단가 + 부가세"
             lazy-rules
           />
 
@@ -75,7 +84,7 @@
             disable
             type="number"
             v-model="nhSupplyTaxValue"
-            label="농협공급가 + 부가세"
+            label="농협단가 + 부가세"
             lazy-rules
           />
         </q-form>
@@ -94,6 +103,7 @@ defineProps<{
 const totalValue = ref(0)
 const supplyValue = ref(0)
 const taxValue = ref(0)
+const xValue = ref(0)
 const localSupplyValue = ref(0)
 const nhSupplyValue = ref(0)
 const localSupplyTaxValue = ref(0)
@@ -117,17 +127,23 @@ const onSubmit = () => {
     tmpResult = Math.trunc((supplyValue.value + x) * 0.93)
 
     if (totalValue.value - result > totalValue.value - tmpResult && tmpResult % 10 === 0) {
-      result = supplyValue.value + x
-      break;
+
+      if (supplyValue.value + x > totalValue.value) {
+        result = supplyValue.value + x
+        xValue.value = x
+        break;
+      }
     } else {
       result = tmpResult
     }
   }
 
-  localSupplyValue.value = result
+  localSupplyValue.value = tmpResult
   localSupplyTaxValue.value = Math.trunc(localSupplyValue.value * 1.1)
-  nhSupplyValue.value = Math.trunc(localSupplyValue.value * 1.07)
+  nhSupplyValue.value = result
   nhSupplyTaxValue.value = Math.trunc(nhSupplyValue.value * 1.1)
+  // nhSupplyValue.value = Math.trunc(localSupplyValue.value * 1.07)
+  // nhSupplyTaxValue.value = Math.trunc(nhSupplyValue.value * 1.1)
 }
 
 const onReset = () => {
