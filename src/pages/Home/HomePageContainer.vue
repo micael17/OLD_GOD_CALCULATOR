@@ -1,0 +1,21 @@
+<template>
+  <q-page class="row justify-center items-start content-start" :style-fn="myTweak">
+    <div class="col-shrink" style="overflow: auto; min-width: 350px; max-width: 350px;">
+      <CalculatorContainer />
+    </div>
+  </q-page>
+</template>
+<script setup lang="ts">
+import CalculatorContainer from '@/pages/Home/container/CalculatorContainer.vue'
+
+defineProps<{
+  title?: string,
+  subTitle?: string
+}>()
+
+const myTweak = (offset: number) => {
+  return {
+    minHeight: offset ? `calc(100vh - ${offset}px)` : '100vh'
+  }
+}
+</script>
