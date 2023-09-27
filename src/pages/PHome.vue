@@ -42,16 +42,48 @@
             hint="입력하신 합계 금액에 포함된 부가세액"
             lazy-rules
           />
+
+          <q-input
+            filled
+            disable
+            type="number"
+            v-model="localSupplyValue"
+            label="지역공급가"
+            lazy-rules
+          />
+
+          <q-input
+            filled
+            disable
+            type="number"
+            v-model="nhSupplyValue"
+            label="농협공급가"
+            lazy-rules
+          />
+
+          <q-input
+            filled
+            disable
+            type="number"
+            v-model="localSupplyTaxValue"
+            label="지역공급가 + 부가세"
+            lazy-rules
+          />
+
+          <q-input
+            filled
+            disable
+            type="number"
+            v-model="nhSupplyTaxValue"
+            label="농협공급가 + 부가세"
+            lazy-rules
+          />
         </q-form>
       </div>
-    </div>
-    <div class="col-shrink offset-1" style="overflow: auto; min-width: 350px; max-width: 350px;">
-      <cp-form />
     </div>
   </q-page>
 </template>
 <script setup lang="ts">
-import CpForm from '@/components/cpForm.vue'
 import { ref } from 'vue'
 
 defineProps<{
@@ -62,9 +94,13 @@ defineProps<{
 const totalValue = ref(0)
 const supplyValue = ref(0)
 const taxValue = ref(0)
+const localSupplyValue = ref(0)
+const nhSupplyValue = ref(0)
+const localSupplyTaxValue = ref(0)
+const nhSupplyTaxValue = ref(0)
 
 
-const myTweak = (offset) => {
+const myTweak = (offset: number) => {
   return {
     minHeight: offset ? `calc(100vh - ${offset}px)` : '100vh'
   }
@@ -73,6 +109,25 @@ const myTweak = (offset) => {
 const onSubmit = () => {
   taxValue.value = Math.floor(totalValue.value * 10 / 110) // 일반적으로 부가세는 원단위 이하 소수점은 버림.
   supplyValue.value = totalValue.value - taxValue.value // 공급가는 합계급액에서 부가세만 빼면 됨.
+
+  //지역공급가 찾기
+  let result = 0
+  let tmpResult = 0
+  for(let x = 0; x < supplyValue.value; x += 10) {
+    tmpResult = Math.trunc((supplyValue.value + x) * 0.93)
+
+    if (totalValue.value - result > totalValue.value - tmpResult && tmpResult % 10 === 0) {
+      result = supplyValue.value + x
+      break;
+    } else {
+      result = tmpResult
+    }
+  }
+
+  localSupplyValue.value = result
+  localSupplyTaxValue.value = localSupplyValue.value * 1.1
+  nhSupplyValue.value = Math.trunc(localSupplyValue.value * 1.07)
+  nhSupplyTaxValue.value = Math.trunc(nhSupplyValue.value * 1.1)
 }
 
 const onReset = () => {
