@@ -1,18 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
 // import HelloThere from '@/components/HelloThere.vue'
-import PHome from '@/pages/Home/HomePageContainer.vue'
+import TaxPage from '@/pages/Tax/TaxPage.vue'
+import NhPage from '@/pages/Nh/NhPage.vue'
 
 const routes = [
   {
     path: '/',
-    component: PHome,
-    children: [
-      {
-        path: '/',
-        component: PHome
-      }
-    ]
+    component: TaxPage
   },
+  {
+    path: '/nh',
+    component: NhPage
+  }
 ]
 
 export default createRouter({

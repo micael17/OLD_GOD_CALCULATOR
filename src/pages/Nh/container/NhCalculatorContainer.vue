@@ -5,61 +5,76 @@
       @reset="onReset"
       class="q-gutter-md"
     >
-      <input-component
+
+      <q-input
+        filled
+        type="number"
+        v-model="totalModel"
         label="합계 금액"
         hint="부가세를 포함한 최종 금액"
-        :value="totalModel"
-        @update:modelValue="(newValue) => totalModel = newValue"
+        lazy-rules
       />
 
-      <div>
-        <q-btn label="Submit" type="submit" color="primary"/>
-        <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
-      </div>
+      <q-btn label="계산" type="submit" color="primary"/>
+      <q-btn label="초기화" type="reset" color="primary" flat class="q-ml-sm" />
 
-      <input-component
+      <q-input
+        filled
+        type="number"
+        v-model="supplyModel"
         label="공급가액"
         hint="입력하신 합계 금액에서 부가세액을 뺀 금액"
-        :value="supplyModel"
-        :disable="true"
+        readonly
       />
 
-      <input-component
+      <q-input
+        filled
+        type="number"
+        v-model="taxModel"
         label="부가세액"
         hint="입력하신 합계 금액에 포함된 부가세액"
-        :value="taxModel"
-        :disable="true"
+        readonly
       />
 
-      <input-component
+      <q-input
+        filled
+        type="number"
+        v-model="xModel"
         label="x"
         hint="지역공급가를 찾기 위해 더한 금액"
-        :value="xModel"
-        :disable="true"
+        readonly
       />
 
-      <input-component
+      <q-input
+        filled
+        type="number"
+        v-model="localModel"
         label="지역본부단가"
-        :value="localModel"
-        :disable="true"
+        readonly
       />
 
-      <input-component
+      <q-input
+        filled
+        type="number"
+        v-model="nhModel"
         label="농협단가"
-        :value="nhModel"
-        :disable="true"
+        readonly
       />
 
-      <input-component
+      <q-input
+        filled
+        type="number"
+        v-model="localTaxModel"
         label="지역본부단가 + 부가세"
-        :value="localTaxModel"
-        :disable="true"
+        readonly
       />
 
-      <input-component
+      <q-input
+        filled
+        type="number"
+        v-model="nhTaxModel"
         label="농협단가 + 부가세"
-        :value="nhTaxModel"
-        :disable="true"
+        readonly
       />
     </q-form>
   </div>
@@ -68,7 +83,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import CalculationService from '@/domain/calculation/CalculationService'
-import InputComponent from '@/pages/Home/component/inputComponent.vue'
 
 const totalModel = ref(0)
 const supplyModel = ref(0)
