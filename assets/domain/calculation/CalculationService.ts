@@ -1,5 +1,5 @@
-import LocalNh from '@/domain/calculation/LocalNh'
-import Base from '@/domain/calculation/Base'
+import LocalNh from '#d/calculation/LocalNh'
+import Base from '#d/calculation/Base'
 
 interface CalculationService {
   getSupplyTaxValue(totalValue: number): Base

@@ -41,7 +41,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import CalculationService from '@/domain/calculation/CalculationService'
+import CalculationService from '#d/calculation/CalculationService'
 
 const totalModel = ref(0)
 const supplyModel = ref(0)

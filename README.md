@@ -1,26 +1,75 @@
-# Vue 3 + TypeScript + Vite + Pinia + Quasar
+# Nuxt 3 Minimal Starter
 
-# "dependencies"
-    "@quasar/extras": "^1.16.6",
-    "pinia": "^2.1.6",
-    "quasar": "^2.12.7",
-    "vue": "^3.3.4",
-    "vue-router": "^4.2.4"
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-# "devDependencies"
-      "@quasar/vite-plugin": "^1.5.0",
-      "@types/node": "^20.6.3",
-      "@typescript-eslint/eslint-plugin": "^6.7.2",
-      "@typescript-eslint/parser": "^6.7.2",
-      "@vitejs/plugin-vue": "^4.2.3",
-      "eslint": "^8.49.0",
-      "eslint-config-prettier": "^9.0.0",
-      "eslint-plugin-import": "^2.28.1",
-      "eslint-plugin-vue": "^9.17.0",
-      "prettier": "3.0.3",
-      "sass": "^1.32.12",
-      "typescript": "^4.5.2",
-      "vite": "^4.4.5",
-      "vite-plugin-eslint": "^1.8.1",
-      "vue-eslint-parser": "^9.3.1",
-      "vue-tsc": "^1.8.5"
+## Setup
+
+Make sure to install the dependencies:
+
+```bash
+# npm
+npm install
+
+# pnpm
+pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
+```
+
+## Development Server
+
+Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
+npm run dev
+
+# pnpm
+pnpm run dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm run build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm run preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
