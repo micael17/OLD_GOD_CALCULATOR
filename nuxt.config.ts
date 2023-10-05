@@ -6,9 +6,11 @@ export default defineNuxtConfig({
       'nuxt-quasar-ui'
   ],
   quasar: {},
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   alias: {
     '#d': path.resolve(__dirname, './assets/domain'),
-    '#s': path.resolve(__dirname, './assets/style')
-  }
+    '#s': path.resolve(__dirname, './assets/style'),
+    '#c': path.resolve(__dirname, './components')
+  },
+  css: ['~/assets/style/style.css'],
 })

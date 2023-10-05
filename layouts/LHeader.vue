@@ -1,18 +1,10 @@
 <template>
-  <q-header elevated class="row justify-center items-start content-start" :style="style" height-hint="98">
+  <q-header elevated class="row justify-center items-start content-start" :style="style">
     <q-toolbar>
       <q-toolbar-title>
-        Title
+        계산기
       </q-toolbar-title>
     </q-toolbar>
-
-    <!--
-    <q-tabs align="left">
-      <q-route-tab to="/page1" label="Page One" />
-      <q-route-tab to="/page2" label="Page Two" />
-      <q-route-tab to="/page3" label="Page Three" />
-    </q-tabs>
-    -->
   </q-header>
 </template>
 
@@ -20,7 +12,6 @@
   const yellow = '#f7d336'
   const green = '#8ae99c'
   const style = {
-
     'background': `linear-gradient(15deg, ${yellow}, ${green})`
   }
 </script>

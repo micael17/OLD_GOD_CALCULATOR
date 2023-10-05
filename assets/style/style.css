@@ -21,6 +21,20 @@ button {
   transition: border-color 0.25s;
 }
 
+header {
+  z-index: 999;
+}
+
+footer {
+  z-index: 999;
+}
+
+main {
+  z-index: 99;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+}
+
 header > .row,
 footer > .row,
 .q-page-container > main {

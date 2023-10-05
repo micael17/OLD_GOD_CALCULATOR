@@ -7,7 +7,7 @@
 </template>
 <script setup lang="ts">
 
-import TaxCalculatorContainer from "~/pages/Tax/container/TaxCalculatorContainer.vue";
+import TaxCalculatorContainer from "#c/Tax/container/TaxCalculatorContainer.vue";
 
 defineProps<{
   title?: string,
