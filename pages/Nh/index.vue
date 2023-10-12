@@ -6,7 +6,6 @@
   </q-page>
 </template>
 <script setup lang="ts">
-
 import NhCalculatorContainer from "#c/Nh/container/NhCalculatorContainer.vue";
 
 defineProps<{

@@ -1,16 +1,21 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
-  <div>
-    <h1>Welcome to the homepage</h1>
-    <q-input
-        label="테스트"
-    />
-  </div>
+  <q-page class="row justify-center items-start content-start" :style-fn="myTweak">
+    <div class="col-shrink" style="overflow: auto; min-width: 350px; max-width: 350px;">
+      <TaxCalculatorContainer />
+    </div>
+  </q-page>
 </template>
+<script setup lang="ts">
+import TaxCalculatorContainer from "../components/Tax/container/TaxCalculatorContainer.vue";
 
-<style scoped>
+defineProps<{
+  title?: string,
+  subTitle?: string
+}>()
 
-</style>
+const myTweak = (offset: number) => {
+  return {
+    minHeight: offset ? `calc(100vh - ${offset}px)` : '100vh'
+  }
+}
+</script>

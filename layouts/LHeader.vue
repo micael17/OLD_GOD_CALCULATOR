@@ -8,7 +8,7 @@
   </q-header>
 </template>
 
-<script setup>
+<script setup lang="ts">
   const yellow = '#f7d336'
   const green = '#8ae99c'
   const style = {

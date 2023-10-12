@@ -1,4 +1,22 @@
 {
   // https://nuxt.com/docs/guide/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json"
+  "extends": [
+    "./.nuxt/tsconfig.json",
+  ],
+  "compilerOptions": {
+    "strict": true,
+    "types": ["node"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "jsx": "preserve",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "isolatedModules": true,
+
+    "paths": {
+      "#d": ["./assets/domain/*"],
+      "#s": ["./assets/style/*"],
+      "#c": ["./components/*"],
+    }
+  }
 }

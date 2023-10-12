@@ -6,7 +6,6 @@
   </q-page>
 </template>
 <script setup lang="ts">
-
 import TaxCalculatorContainer from "#c/Tax/container/TaxCalculatorContainer.vue";
 
 defineProps<{
