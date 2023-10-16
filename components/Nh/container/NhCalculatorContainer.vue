@@ -81,7 +81,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import CalculationService from '#d/calculation/CalculationService'
 
 const totalModel = ref(0)

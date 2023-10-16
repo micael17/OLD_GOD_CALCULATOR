@@ -40,13 +40,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import CalculationService from '#d/calculation/CalculationService'
 
 const totalModel = ref(0)
 const supplyModel = ref(0)
 const taxModel = ref(0)
-
 
 const onSubmit = () => {
   const { supplyValue, taxValue } = CalculationService.getSupplyTaxValue(totalModel.value)

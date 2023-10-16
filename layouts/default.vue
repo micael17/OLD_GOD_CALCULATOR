@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 import LHeader from "~/layouts/LHeader.vue";
 import LFooter from "~/layouts/LFooter.vue";
 </script>

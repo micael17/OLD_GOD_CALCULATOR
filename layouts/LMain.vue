@@ -9,6 +9,6 @@
 </template>
 
 <script setup>
-import LHeader from '@/layouts/LHeader.vue'
-import LFooter from '@/layouts/LFooter.vue'
+import LHeader from '~/layouts/LHeader.vue'
+import LFooter from '~/layouts/LFooter.vue'
 </script>

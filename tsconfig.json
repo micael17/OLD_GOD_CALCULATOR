@@ -14,9 +14,10 @@
     "isolatedModules": true,
 
     "paths": {
-      "#d": ["./assets/domain/*"],
-      "#s": ["./assets/style/*"],
-      "#c": ["./components/*"],
+      "~/*": ["./*"],
+      "#d/*": ["./assets/domain/*"],
+      "#s/*": ["./assets/style/*"],
+      "#c/*": ["./components/*"],
     }
   }
 }
