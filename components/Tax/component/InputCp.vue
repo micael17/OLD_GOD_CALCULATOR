@@ -1,26 +1,65 @@
 <template>
-  <q-input
-    filled
-    type="number"
-    :model-value="value"
-    @update:model-value="(value: number) => $emit('update:modelValue', Number(value))"
-    :label="label"
-    :hint="hint"
-    :disable="disable"
-    lazy-rules
-  />
+  <div class="input-group">
+    <div class="input-title">{{ title }}</div>
+    <input
+        :value="modelValue"
+        type="text"
+        :disabled="disabled"
+        :readonly="readonly"
+        @input="$emit('update:modelValue', $event.target.value)"
+    />
+    <span>원</span>
+    <label v-if="hint && hint.length > 0">{{ hint }}</label>
+  </div>
 </template>
 
 <script setup lang="ts">
 defineProps<{
-  value: number
-  label: string
+  title: string
+  modelValue: string
+  label?: string
   hint?: string
-  disable?: boolean
+  disabled?: boolean
+  readonly?: boolean
 }>()
+
 defineEmits(['update:modelValue'])
 </script>
 
 <style scoped>
+  .input-title {
+    font-size: 22px;
+    font-weight: 500;
+  }
 
+  .input-group {
+    position: relative;
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    & span {
+      padding-left: 6px;
+      font-size: 18px;
+    }
+
+    & input {
+      font-size: 20px;
+      width: 90%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    & input[readonly] {
+      background-color: #f0f0f0;
+    }
+
+    & label {
+      left: 20px;
+      color: #777;
+      font-size: 15px;
+      pointer-events: none; /* 라벨 요소를 클릭 및 이벤트에서 제외합니다 */
+    }
+  }
 </style>

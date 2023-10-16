@@ -2,7 +2,7 @@
   <q-header elevated class="row justify-center items-start content-start" :style="style">
     <q-toolbar>
       <q-toolbar-title>
-        계산기
+        만능 계산기
       </q-toolbar-title>
     </q-toolbar>
   </q-header>

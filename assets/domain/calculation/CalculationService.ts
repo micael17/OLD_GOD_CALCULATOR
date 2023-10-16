@@ -2,8 +2,14 @@ import LocalNh from '#d/calculation/LocalNh'
 import Base from '#d/calculation/Base'
 
 interface CalculationService {
+  addCommas(input: string): string
   getSupplyTaxValue(totalValue: number): Base
   getLocalNhValue(totalValue:number, supplyValue: number): LocalNh
+}
+
+function addCommas(input: string) {
+  // 정규 표현식을 사용하여 숫자 형식 유지 및 3자리마다 콤마 추가
+  return input.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
 
 function getSupplyTaxValue(totalValue: number) {
@@ -55,6 +61,7 @@ function getLocalNhValue(totalValue:number, supplyValue: number) {
 }
 
 export default {
+  addCommas,
   getSupplyTaxValue,
   getLocalNhValue
 } as CalculationService

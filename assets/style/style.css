@@ -9,6 +9,28 @@ h1 {
   line-height: 1.1;
 }
 
+h2 {
+  font-size: 2.8em;
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: 2.4em;
+  line-height: 1.1;
+}
+
+h4 {
+  font-size: 2.0em;
+  font-weight: 500;
+  line-height: 0.4;
+  text-align: center;
+}
+
+hr {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -39,4 +61,14 @@ header > .row,
 footer > .row,
 .q-page-container > main {
   width: 1024px;
+}
+
+.q-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }

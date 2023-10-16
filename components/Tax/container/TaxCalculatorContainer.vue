@@ -1,62 +1,64 @@
 <template>
-  <div class="q-pa-md" style="max-width: 400px">
+  <div class="q-pa-md">
     <q-form
       @submit="onSubmit"
       @reset="onReset"
-      class="q-gutter-md"
     >
+      <h4>합계 금액으로 계산</h4>
+      <hr>
 
-      <q-input
-        filled
-        type="number"
-        v-model="totalModel"
-        label="합계 금액"
-        hint="부가세를 포함한 최종 금액"
-        lazy-rules
+      <input-cp
+          title="합계 금액"
+          v-model="totalModel"
+          @input="totalModel = addCommas(totalModel)"
       />
 
-      <q-btn label="계산" type="submit" color="primary"/>
-      <q-btn label="초기화" type="reset" color="primary" flat class="q-ml-sm" />
+      <div class="q-pa-md q-gutter-sm row justify-evenly">
+        <q-btn label="계산 (엔터)" type="submit" color="primary" size="lg"/>
+        <q-btn label="초기화" type="reset" color="white" text-color="black" size="lg" class="q-ml-sm" />
+      </div>
 
-      <q-input
-        filled
-        type="number"
-        v-model="supplyModel"
-        label="공급가액"
-        hint="입력하신 합계 금액에서 부가세액을 뺀 금액"
-        readonly
+      <input-cp
+          title="공급가액"
+          v-model="supplyModel"
+          hint="입력하신 합계 금액에서 부가세액을 뺀 금액"
+          readonly
       />
 
-      <q-input
-        filled
-        type="number"
-        v-model="taxModel"
-        label="부가세액"
-        hint="입력하신 합계 금액에 포함된 부가세액"
-        readonly
+      <input-cp
+          title="부가세액"
+          v-model="taxModel"
+          hint="입력하신 합계 금액에 포함된 부가세액"
+          readonly
       />
+
     </q-form>
   </div>
 </template>
 
 <script setup lang="ts">
 import CalculationService from '#d/calculation/CalculationService'
+import InputCp from '#c/Tax/component/InputCp.vue'
 
-const totalModel = ref(0)
-const supplyModel = ref(0)
-const taxModel = ref(0)
+const totalModel = ref("0")
+const supplyModel = ref("0")
+const taxModel = ref("0")
+
+const addCommas = (value: string) => CalculationService.addCommas(value)
 
 const onSubmit = () => {
-  const { supplyValue, taxValue } = CalculationService.getSupplyTaxValue(totalModel.value)
+  // 입력에서 콤마(,) 제거
+  const stringWithoutCommas = totalModel.value.replace(/,/g, '');
+  const { supplyValue, taxValue } = CalculationService.getSupplyTaxValue(Number(stringWithoutCommas))
 
-  supplyModel.value = supplyValue
-  taxModel.value = taxValue
+  supplyModel.value = addCommas(String(supplyValue))
+  taxModel.value = addCommas(String(taxValue))
 }
 
 const onReset = () => {
-  totalModel.value = 0
-  supplyModel.value = 0
-  taxModel.value = 0
+  totalModel.value = "0"
+  supplyModel.value = "0"
+  taxModel.value = "0"
 }
 </script>
 
