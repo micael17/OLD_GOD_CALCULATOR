@@ -1,18 +1,3 @@
-<template>
-  <div class="input-group">
-    <div class="input-title">{{ title }}</div>
-    <input
-        :value="modelValue"
-        type="text"
-        :disabled="disabled"
-        :readonly="readonly"
-        @input="$emit('update:modelValue', $event.target.value)"
-    />
-    <span>원</span>
-    <label v-if="hint && hint.length > 0">{{ hint }}</label>
-  </div>
-</template>
-
 <script setup lang="ts">
 defineProps<{
   title: string
@@ -26,16 +11,34 @@ defineProps<{
 defineEmits(['update:modelValue'])
 </script>
 
-<style scoped>
-  .input-title {
-    font-size: 22px;
-    font-weight: 500;
-  }
+<template>
+  <div class="input-group">
+    <div class="input-title">{{ title }}</div>
+    <div>
+      <input
+          :value="modelValue"
+          type="text"
+          :disabled="disabled"
+          :readonly="readonly"
+          @input="$emit('update:modelValue', $event.target.value)"
+      />
+      <span>원</span>
+    </div>
+    <label v-if="hint && hint.length > 0">{{ hint }}</label>
+  </div>
+</template>
 
+<style scoped>
   .input-group {
     position: relative;
     margin-top: 8px;
     margin-bottom: 8px;
+
+    .input-title {
+      font-size: 22px;
+      font-weight: 500;
+    }
+
 
     & span {
       padding-left: 6px;
@@ -44,7 +47,6 @@ defineEmits(['update:modelValue'])
 
     & input {
       font-size: 20px;
-      width: 90%;
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 3px;

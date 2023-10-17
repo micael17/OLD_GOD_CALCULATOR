@@ -1,9 +1,9 @@
-import LocalNh from '#d/calculation/LocalNh'
-import Base from '#d/calculation/Base'
+import { Base, VatTotal, LocalNh } from 'Calculation'
 
 interface CalculationService {
   addCommas(input: string): string
-  getSupplyTaxValue(totalValue: number): Base
+  getSupplyVatFromTotal(totalValue: number): Base
+  getVatTotalFromSupply(supplyValue: number): VatTotal
   getLocalNhValue(totalValue:number, supplyValue: number): LocalNh
 }
 
@@ -12,16 +12,29 @@ function addCommas(input: string) {
   return input.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
 
-function getSupplyTaxValue(totalValue: number) {
-  const taxValue = Math.floor(totalValue * 10 / 110) // 일반적으로 부가세는 원단위 이하 소수점은 버림.
-  const supplyValue = totalValue - taxValue // 공급가는 합계급액에서 부가세만 빼면 됨.
+function getSupplyVatFromTotal(totalValue: number) {
+  const vatValue = Math.floor(totalValue * 10 / 110) // 일반적으로 부가세는 원단위 이하 소수점은 버림.
+  const supplyValue = totalValue - vatValue // 공급가는 합계급액에서 부가세만 빼면 됨.
 
   const result:Base = {
-    taxValue,
+    vatValue,
     supplyValue,
   }
 
   return result
+}
+
+function getVatTotalFromSupply(supplyValue: number) {
+  const vatRate = 0.1; // 부가세율 (10%)
+  const vat = supplyValue * vatRate;
+  const total = supplyValue + vat;
+
+  const result: VatTotal = {
+    vat,
+    total
+  }
+
+  return result;
 }
 
 function getLocalNhValue(totalValue:number, supplyValue: number) {
@@ -46,15 +59,15 @@ function getLocalNhValue(totalValue:number, supplyValue: number) {
   }
 
   const localValue = tmpSusValue
-  const localTaxValue = Math.trunc(localValue * 1.1)
+  const localVatValue = Math.trunc(localValue * 1.1)
   const nhValue = susValue
-  const nhTaxValue = Math.trunc(nhValue * 1.1)
+  const nhVatValue = Math.trunc(nhValue * 1.1)
   
   const result: LocalNh = {
     localValue,
-    localTaxValue,
+    localVatValue,
     nhValue,
-    nhTaxValue,
+    nhVatValue,
     xValue
   }
   return result
@@ -62,6 +75,7 @@ function getLocalNhValue(totalValue:number, supplyValue: number) {
 
 export default {
   addCommas,
-  getSupplyTaxValue,
+  getSupplyVatFromTotal,
+  getVatTotalFromSupply,
   getLocalNhValue
 } as CalculationService

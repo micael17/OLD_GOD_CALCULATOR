@@ -1,18 +1,14 @@
 <script setup lang="ts">
-import LHeader from "~/layouts/LHeader.vue";
-import LFooter from "~/layouts/LFooter.vue";
+import Header from "~/layouts/defaultHeader.vue";
+import Footer from "~/layouts/defaultFooter.vue";
 </script>
 
 <template>
   <q-layout view="hhh lpR fff">
-    <LHeader />
-    <q-page-container class="row justify-center items-start content-start ">
+    <Header />
+    <q-page-container class="row justify-center items-start content-start">
       <slot />
     </q-page-container>
-    <LFooter />
+    <Footer />
   </q-layout>
 </template>
-
-<style scoped>
-
-</style>

@@ -1,12 +1,12 @@
 <template>
   <q-page class="row justify-center items-start content-start" :style-fn="myTweak">
     <div class="col-shrink">
-      <TaxCalculatorContainer />
+      <TotalCalculatorContainer />
     </div>
   </q-page>
 </template>
 <script setup lang="ts">
-import TaxCalculatorContainer from "#c/Tax/container/TaxCalculatorContainer.vue";
+import TotalCalculatorContainer from "#c/Tax/container/TotalCalculatorContainer.vue";
 
 defineProps<{
   title?: string,

@@ -1,13 +1,12 @@
 <script setup lang="ts">
-
 </script>
 
 <template>
-  <div>
-    푸터입니다.
-  </div>
+  <q-footer elevated class="row justify-center items-start content-start bg-grey-8 text-white">
+    <q-toolbar>
+      <q-toolbar-title>
+        <div>Copyright © 만능계산기. All rights reserved.</div>
+      </q-toolbar-title>
+    </q-toolbar>
+  </q-footer>
 </template>
-
-<style scoped>
-
-</style>

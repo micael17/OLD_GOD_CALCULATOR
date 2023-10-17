@@ -1,4 +1,12 @@
+@font-face {
+  font-family: 'MICEMyungjo';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEMyungjo.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
+  font-family: 'MICEMyungjo', 'Malgun Gothic', sans-serif;
   margin: 0 auto;
   min-width: 320px;
   min-height: 100vh;
@@ -61,6 +69,11 @@ header > .row,
 footer > .row,
 .q-page-container > main {
   width: 1024px;
+}
+
+
+.q-toolbar {
+  min-height: 72px !important;
 }
 
 .q-form {
