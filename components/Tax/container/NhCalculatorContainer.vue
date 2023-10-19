@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import CalculationService from '#d/calculation/CalculationService'
-import InputCp from '#c/Tax/ui/InputCp.vue'
+import InputCp from '#c/Tax/ui/cpInput.vue'
 
 const totalModel = ref("")
 const supplyModel = ref("0")

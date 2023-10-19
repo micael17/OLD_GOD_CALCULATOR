@@ -28,6 +28,11 @@
                 <q-item-label>Nh 계산기</q-item-label>
               </q-item-section>
             </q-item>
+            <q-item clickable v-close-popup tabindex="0" to="/character">
+              <q-item-section>
+                <q-item-label>글자수세기</q-item-label>
+              </q-item-section>
+            </q-item>
           </q-list>
         </q-btn-dropdown>
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import CalculationService from '#d/calculation/CalculationService'
-import InputCp from '#c/Tax/ui/InputCp.vue'
+import InputCp from '#c/Tax/ui/cpInput.vue'
 
 const totalModel = ref("")
 const supplyModel = ref("0")
@@ -29,8 +29,7 @@ const onReset = () => {
     <q-form
         @submit="onSubmit"
         @reset="onReset"
-    >
-      <h4>합계금액으로 계산</h4>
+    >     <h4>합계금액으로 계산</h4>
       <hr>
 
       <input-cp
