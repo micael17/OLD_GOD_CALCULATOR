@@ -2,6 +2,7 @@ import { Base, VatTotal, LocalNh } from 'Calculation'
 
 interface CalculationService {
   addCommas(input: string): string
+  removeCommas(input: string): string
   getSupplyVatFromTotal(totalValue: number): Base
   getVatTotalFromSupply(supplyValue: number): VatTotal
   getLocalNhValue(totalValue:number, supplyValue: number): LocalNh
@@ -10,6 +11,10 @@ interface CalculationService {
 function addCommas(input: string) {
   // 정규 표현식을 사용하여 숫자 형식 유지 및 3자리마다 콤마 추가
   return input.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+}
+
+function removeCommas(input: string) {
+  return input.replace(/,/g, '');
 }
 
 function getSupplyVatFromTotal(totalValue: number) {
@@ -75,6 +80,7 @@ function getLocalNhValue(totalValue:number, supplyValue: number) {
 
 export default {
   addCommas,
+  removeCommas,
   getSupplyVatFromTotal,
   getVatTotalFromSupply,
   getLocalNhValue

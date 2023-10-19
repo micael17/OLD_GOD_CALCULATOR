@@ -1,5 +1,5 @@
 <template>
-  <q-page class="row justify-center items-start content-start" :style-fn="myTweak">
+  <q-page class="row justify-center items-start content-start">
     <div class="col-shrink">
       <TotalCalculatorContainer />
     </div>
@@ -7,15 +7,4 @@
 </template>
 <script setup lang="ts">
 import TotalCalculatorContainer from "#c/Tax/container/TotalCalculatorContainer.vue";
-
-defineProps<{
-  title?: string,
-  subTitle?: string
-}>()
-
-const myTweak = (offset: number) => {
-  return {
-    minHeight: offset ? `calc(100vh - ${offset}px)` : '100vh'
-  }
-}
 </script>

@@ -38,7 +38,7 @@ const onReset = () => {
 </script>
 
 <template>
-  <div class="q-pa-md" style="max-width: 400px">
+  <div class="q-pa-md">
     <q-form
         @submit="onSubmit"
         @reset="onReset"

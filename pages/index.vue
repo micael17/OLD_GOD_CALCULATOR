@@ -17,15 +17,4 @@
 import TotalCalculatorContainer from "#c/Tax/container/TotalCalculatorContainer.vue";
 import SupplyCalculatorContainer from "#c/Tax/container/SupplyCalculatorContainer.vue";
 import TaxDescriptionContainer from "#c/Common/container/TaxDescriptionContainer.vue";
-
-defineProps<{
-  title?: string,
-  subTitle?: string
-}>()
-
-const myTweak = (offset: number) => {
-  return {
-    minHeight: offset ? `calc(100vh - ${offset}px)` : '100vh'
-  }
-}
 </script>

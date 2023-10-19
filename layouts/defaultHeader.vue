@@ -1,55 +1,44 @@
 <script setup lang="ts">
-  const yellow = '#f7d336'
-  const green = '#8ae99c'
-  const style = {
-    'background': `linear-gradient(15deg, ${yellow}, ${green})`
-  }
-
-  const drawerRight = ref(false)
 </script>
 
 <template>
-  <q-header elevated class="row justify-center header">
-    <q-toolbar>
-      <q-toolbar-title class="title">
-        계산기
-      </q-toolbar-title>
-      <q-btn flat @click="drawerRight = !drawerRight" round dense icon="menu" />
-
-      <q-drawer
-          side="right"
-          v-model="drawerRight"
-          show-if-above
-          bordered
-          :width="200"
-          :breakpoint="500"
-          :class="$q.dark.isActive ? 'bg-grey-9' : 'bg-grey-3'"
-      >
-        <q-scroll-area class="fit">
-          <q-list bordered separator>
-            <q-item clickable v-ripple>
-              <q-item-section>Single line item</q-item-section>
-            </q-item>
-
-            <q-item clickable v-ripple>
+  <div>
+    <q-header elevated class="row justify-center header">
+      <q-toolbar>
+        <q-toolbar-title class="title">
+          <q-icon name="calculate" size="xl"/> 계산기
+        </q-toolbar-title>
+        <q-btn-dropdown stretch flat label="메뉴">
+          <q-list>
+            <q-item-label header class="item-header">
               <q-item-section>
-                <q-item-label>Item with caption</q-item-label>
-                <q-item-label caption>Caption</q-item-label>
+                <div>
+                  <q-icon name="calculate" size="sm"/>
+                </div>
+              </q-item-section>
+              <q-separator spaced />
+            </q-item-label>
+            <q-item clickable v-close-popup tabindex="0" to="/">
+              <q-item-section>
+                <q-item-label>부가세 계산기</q-item-label>
               </q-item-section>
             </q-item>
-
-            <q-item clickable v-ripple>
+            <q-item clickable v-close-popup tabindex="0" to="/Nh">
               <q-item-section>
-                <q-item-label overline>OVERLINE</q-item-label>
-                <q-item-label>Item with caption</q-item-label>
+                <q-item-label>Nh 계산기</q-item-label>
               </q-item-section>
             </q-item>
           </q-list>
-        </q-scroll-area>
-      </q-drawer>
+        </q-btn-dropdown>
 
-    </q-toolbar>
-  </q-header>
+      </q-toolbar>
+    </q-header>
+<!--    <div v-if="showMenuList" id="dropdown-menu">
+      <a href="#">메뉴 항목 1</a>
+      <a href="#">메뉴 항목 2</a>
+      <a href="#">메뉴 항목 3</a>
+    </div>-->
+  </div>
 </template>
 
 <style scoped>
@@ -62,10 +51,36 @@
   font-weight: bold;
 }
 
-@media (max-width: 768px) {
+.item-header {
+  padding-bottom: 0;
+}
+
+/* 햄버거 버튼 스타일링 */
+#menu-button {
+  cursor: pointer;
+}
+
+/*@media only screen and (max-width: 768px) {
+  !* 모바일 화면에서 적용할 스타일 설정 *!
+  .title {
+    font-size: 24px;
+    font-weight: normal;
+  }
+
+  .desktop-menu {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  !* 데스크톱 화면에서 적용할 스타일 설정 *!
   .title {
     font-size: 32px;
     font-weight: bold;
   }
-}
+
+  .mobile-menu {
+    display: none;
+  }
+}*/
 </style>
