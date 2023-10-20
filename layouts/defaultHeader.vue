@@ -18,7 +18,7 @@
               </q-item-section>
               <q-separator spaced />
             </q-item-label>
-            <q-item clickable v-close-popup tabindex="0" to="/">
+            <q-item clickable v-close-popup tabindex="0" to="/tax">
               <q-item-section>
                 <q-item-label>부가세 계산기</q-item-label>
               </q-item-section>
