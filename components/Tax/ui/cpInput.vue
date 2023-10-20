@@ -14,7 +14,7 @@ defineEmits(['update:modelValue'])
 <template>
   <div class="input-group">
     <div class="input-title">{{ title }}</div>
-    <div>
+    <div class="block">
       <input
           :value="modelValue"
           type="text"
