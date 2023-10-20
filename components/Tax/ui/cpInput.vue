@@ -14,14 +14,16 @@ defineEmits(['update:modelValue'])
 <template>
   <div class="input-group">
     <div class="input-title">{{ title }}</div>
-    <input
-        :value="modelValue"
-        type="text"
-        :disabled="disabled"
-        :readonly="readonly"
-        @input="$emit('update:modelValue', $event.target.value)"
-    />
-    <span>원</span>
+    <div class="block">
+      <input
+          :value="modelValue"
+          type="text"
+          :disabled="disabled"
+          :readonly="readonly"
+          @input="$emit('update:modelValue', $event.target.value)"
+      />
+      <span>원</span>
+    </div>
     <label v-if="hint && hint.length > 0">{{ hint }}</label>
   </div>
 </template>
@@ -37,16 +39,18 @@ defineEmits(['update:modelValue'])
     }
 
     & span {
+      width: auto;
       padding-left: 6px;
       font-size: 18px;
     }
 
     & input {
+      width: auto;
       font-size: 20px;
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 3px;
-      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     }
 
     & input[readonly] {
