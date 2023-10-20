@@ -39,15 +39,12 @@ defineEmits(['update:modelValue'])
     }
 
     & span {
-      width: auto;
       padding-left: 6px;
       font-size: 18px;
     }
 
     & input {
-      width: auto;
       font-size: 20px;
-      padding: 10px;
       border: 1px solid #ccc;
       border-radius: 3px;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
