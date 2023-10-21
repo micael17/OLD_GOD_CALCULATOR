@@ -23,13 +23,16 @@ export default defineNuxtConfig({
   quasar: {},
   app: {
     head: {
-      script: [{
+      script: [{ //구글 애널리틱스 설정
         async: true,
         src: analyticsSrc
       }, {
         innerHTML : analyticsScript
+      }, { // 구글 애드센스 실행
+        defer: true,
+        src: '/GoogleAds.ts'
       }],
-      meta: [{
+      meta: [{ //구글 애드센스 인식시키기
         name: 'google-adsense-account',
         content: 'ca-pub-9353405093450953'
       }]
