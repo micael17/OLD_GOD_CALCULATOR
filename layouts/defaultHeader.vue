@@ -6,14 +6,14 @@
     <q-header elevated class="row justify-center header">
       <q-toolbar>
         <q-toolbar-title class="title">
-          <q-icon name="calculate" size="xl"/> 계산기
+          <q-icon name="calculate" size="xl" style="padding-bottom: 0.1rem;"/>만능계산기
         </q-toolbar-title>
         <q-btn-dropdown stretch flat label="메뉴">
           <q-list>
             <q-item-label header class="item-header">
               <q-item-section>
                 <div>
-                  <q-icon name="calculate" size="sm"/>
+                  <q-icon name="calculate" size="sm"/>만능
                 </div>
               </q-item-section>
               <q-separator spaced />
