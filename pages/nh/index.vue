@@ -1,7 +1,9 @@
 <template>
-  <q-page class="row justify-center items-start content-start">
-    <div class="col-shrink">
-      <NhCalculatorContainer />
+  <q-page>
+    <div class="row q-ma-lg justify-center items-start content-start">
+      <div class="col-shrink">
+        <NhCalculatorContainer />
+      </div>
     </div>
   </q-page>
 </template>

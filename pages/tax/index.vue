@@ -1,14 +1,15 @@
 <template>
   <q-page>
-    <div class="row justify-center items-start content-start">
-      <div class="col-shrink">
+    <div class="row q-my-lg justify-center items-start content-start">
+      <div class="col-shrink q-mx-lg">
         <TotalCalculatorContainer />
       </div>
-      <div class="col-shrink">
+      <div class="col-shrink q-mx-lg">
         <SupplyCalculatorContainer />
       </div>
     </div>
-    <div class="row justify-center">
+    <hr>
+    <div class="row q-ma-lg">
       <TaxDescriptionContainer />
     </div>
   </q-page>
@@ -16,7 +17,7 @@
 <script setup lang="ts">
 import TotalCalculatorContainer from "#c/Tax/container/TotalCalculatorContainer.vue";
 import SupplyCalculatorContainer from "#c/Tax/container/SupplyCalculatorContainer.vue";
-import TaxDescriptionContainer from "#c/Common/container/TaxDescriptionContainer.vue";
+import TaxDescriptionContainer from "#c/Common/container/taxDescriptionContainer.vue";
 
 useHead({
   title: '부가세 계산기 - 만능계산기',

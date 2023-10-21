@@ -1,12 +1,19 @@
 <template>
-  <q-page class="row justify-center items-start content-start">
-    <div class="col">
-      <CharacterCounterContainer />
+  <q-page>
+    <div class="row q-ma-lg justify-center items-start content-start">
+      <div class="col">
+        <CharacterCounterContainer />
+      </div>
+    </div>
+    <hr>
+    <div class="row q-ma-lg">
+      <character-description-container />
     </div>
   </q-page>
 </template>
 <script setup lang="ts">
 import CharacterCounterContainer from "#c/Counter/container/characterCounterContainer.vue";
+import CharacterDescriptionContainer from "#c/Counter/container/characterDescriptionContainer.vue";
 
 useHead({
   title: '글자수 계산기 - 만능계산기',

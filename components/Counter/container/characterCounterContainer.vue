@@ -20,14 +20,12 @@ const counter = (inputText: string) => {
 </script>
 
 <template>
-  <div class="q-pa-md">
-    <cp-card>
-      <cp-title title="글자수세기" />
-      <cp-text-area @update:input-updated="counter" />
-      <text-block title="공백 포함 글자수 :" :value="characterCountWithSpaces" />
-      <text-block title="공백 미포함 글자수 :" :value="characterCountWithoutSpaces" />
-      <text-block title="공백 포함 Bytes :" :value="byteWithSpacesCount" />
-      <text-block title="공백 미포함 Bytes :" :value="byteWithoutSpacesCount" />
-    </cp-card>
-  </div>
+  <cp-card>
+    <cp-title title="글자수세기" />
+    <cp-text-area @update:input-updated="counter" />
+    <text-block title="공백 포함 글자수 :" :value="characterCountWithSpaces" />
+    <text-block title="공백 미포함 글자수 :" :value="characterCountWithoutSpaces" />
+    <text-block title="공백 포함 Bytes :" :value="byteWithSpacesCount" />
+    <text-block title="공백 미포함 Bytes :" :value="byteWithoutSpacesCount" />
+  </cp-card>
 </template>
