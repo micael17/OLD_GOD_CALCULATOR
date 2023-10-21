@@ -33,6 +33,13 @@
                 <q-item-label>글자수세기</q-item-label>
               </q-item-section>
             </q-item>
+            <!--
+            <q-item clickable v-close-popup tabindex="0" to="/annualSalary">
+              <q-item-section>
+                <q-item-label>연봉계산기</q-item-label>
+              </q-item-section>
+            </q-item>
+            -->
           </q-list>
         </q-btn-dropdown>
 
@@ -58,11 +65,6 @@
 
 .item-header {
   padding-bottom: 0;
-}
-
-/* 햄버거 버튼 스타일링 */
-#menu-button {
-  cursor: pointer;
 }
 
 /*@media only screen and (max-width: 768px) {

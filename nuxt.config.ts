@@ -28,6 +28,10 @@ export default defineNuxtConfig({
         src: analyticsSrc
       }, {
         innerHTML : analyticsScript
+      }],
+      meta: [{
+        name: 'google-adsense-account',
+        content: 'ca-pub-9353405093450953'
       }]
     }
   }
