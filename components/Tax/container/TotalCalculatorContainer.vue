@@ -29,7 +29,8 @@ const onReset = () => {
     <q-form
         @submit="onSubmit"
         @reset="onReset"
-    >     <h4>합계금액으로 계산</h4>
+    >
+      <h4>합계금액으로 계산</h4>
       <hr>
 
       <input-cp

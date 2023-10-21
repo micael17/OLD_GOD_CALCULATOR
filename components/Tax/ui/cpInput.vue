@@ -14,7 +14,7 @@ defineEmits(['update:modelValue'])
 <template>
   <div class="input-group">
     <div class="input-title">{{ title }}</div>
-    <div class="block">
+    <div class="flex">
       <input
           :value="modelValue"
           type="text"
@@ -34,17 +34,19 @@ defineEmits(['update:modelValue'])
     margin-bottom: 8px;
 
     .input-title {
-      font-size: 22px;
+      font-size: 1.2rem;
       font-weight: 500;
     }
 
     & span {
-      padding-left: 6px;
+      width: 10%;
+      padding: 10px;
       font-size: 18px;
     }
 
     & input {
-      font-size: 20px;
+      width: 90%;
+      padding: 10px;
       border: 1px solid #ccc;
       border-radius: 3px;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
