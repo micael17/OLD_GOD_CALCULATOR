@@ -4,7 +4,7 @@
     "./.nuxt/tsconfig.json"
   ],
   "include": [
-    "env.d.ts" // vue 관련 타입
+    "env.d.ts", // vue 관련 타입
   ],
   "compilerOptions": {
     "strict": true,
