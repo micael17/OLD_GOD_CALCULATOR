@@ -12,6 +12,7 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@types/node": "^20.8.2",
+    "@types/xml2js": "^0.4.13",
     "nuxt": "^3.7.4",
     "nuxt-quasar-ui": "^2.0.6",
     "typescript": "^5.2.2",
@@ -20,6 +21,7 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.16.7",
-    "quasar": "^2.12.7"
+    "quasar": "^2.12.7",
+    "xml2js": "^0.6.2"
   }
 }

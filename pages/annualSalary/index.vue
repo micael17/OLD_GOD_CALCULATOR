@@ -1,8 +1,7 @@
 <template>
   <q-page>
     <div class="row q-ma-lg justify-center items-start content-start">
-      <div class="col">
-      </div>
+      <annual-salary-calculator-container />
     </div>
     <hr>
     <div class="row q-ma-lg">
@@ -10,6 +9,8 @@
   </q-page>
 </template>
 <script setup lang="ts">
+import AnnualSalaryCalculatorContainer
+  from "#c/annualSalary/container/annualSalaryCalculatorContainer.vue";
 
 useHead({
   title: '연봉 계산기 - 만능계산기',

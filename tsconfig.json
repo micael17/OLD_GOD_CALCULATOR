@@ -1,7 +1,10 @@
 {
   // https://nuxt.com/docs/guide/concepts/typescript
   "extends": [
-    "./.nuxt/tsconfig.json",
+    "./.nuxt/tsconfig.json"
+  ],
+  "include": [
+    "env.d.ts" // vue 관련 타입
   ],
   "compilerOptions": {
     "strict": true,
@@ -17,7 +20,7 @@
       "~/*": ["./*"],
       "#d/*": ["./assets/domain/*"],
       "#s/*": ["./assets/style/*"],
-      "#c/*": ["./components/*"],
+      "#c/*": ["./components/*"]
     }
   }
 }

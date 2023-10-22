@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, nextTick } from 'vue'
+import { nextTick } from 'vue'
 
 onMounted(async () => {
   await nextTick()

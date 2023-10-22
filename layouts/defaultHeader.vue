@@ -33,13 +33,6 @@
                 <q-item-label>글자수세기</q-item-label>
               </q-item-section>
             </q-item>
-            <!--
-            <q-item clickable v-close-popup tabindex="0" to="/annualSalary">
-              <q-item-section>
-                <q-item-label>연봉계산기</q-item-label>
-              </q-item-section>
-            </q-item>
-            -->
           </q-list>
         </q-btn-dropdown>
 
