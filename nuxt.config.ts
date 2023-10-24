@@ -2,12 +2,6 @@
 import path from "path";
 
 const analyticsSrc = 'https://www.googletagmanager.com/gtag/js?id=G-EX6TE4V1W3'
-const analyticsScript = '' +
-  'window.dataLayer = window.dataLayer || [];\n' +
-  '  function gtag(){dataLayer.push(arguments);}\n' +
-  '  gtag(\'js\', new Date());\n' +
-  '\n' +
-  '  gtag(\'config\', \'G-EX6TE4V1W3\');'
 
 export default defineNuxtConfig({
   modules: [
@@ -27,10 +21,11 @@ export default defineNuxtConfig({
         async: true,
         src: analyticsSrc
       }, {
-        innerHTML : analyticsScript
+        defer: true,
+        src: '/GoogleAnalytics.js'
       }, { // 구글 애드센스 실행
         defer: true,
-        src: '/GoogleAds.ts'
+        src: '/GoogleAds.js'
       }],
       meta: [{ //구글 애드센스 인식시키기
         name: 'google-adsense-account',

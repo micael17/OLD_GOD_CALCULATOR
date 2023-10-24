@@ -78,53 +78,10 @@ function getLocalNhValue(totalValue:number, supplyValue: number) {
   return result
 }
 
-function getAnnualIncome(monthlyIncome: string) {
-  const _monthlyIncome = parseFloat(monthlyIncome)
-  let _annualIncome = 0
-  let _taxPaid = 0
-  let _netIncome = 0
-
-  if (!isNaN(_monthlyIncome)) {
-    const annualIncomeValue = _monthlyIncome * 12
-    const taxRate = getTaxRate(annualIncomeValue)
-    const tax = calculateTax(annualIncomeValue, taxRate)
-    const netIncome = annualIncomeValue - tax
-
-    _annualIncome = annualIncomeValue
-    _taxPaid = tax
-    _netIncome = netIncome
-  }
-
-  return {
-    annualIncome: _annualIncome,
-    taxPaid: _taxPaid,
-    netIncome: _netIncome
-  }
-}
-
-function getTaxRate(income: number): number {
-  if (income <= 1200) {
-    return 6;
-  } else if (income <= 4600) {
-    return 15;
-  } else if (income <= 8800) {
-    return 24;
-  } else if (income <= 15000) {
-    return 35;
-  } else {
-    return 38;
-  }
-}
-
-function calculateTax(income: number, rate: number): number {
-  return (income * rate) / 100;
-}
-
 export default {
   addCommas,
   removeCommas,
   getSupplyVatFromTotal,
   getVatTotalFromSupply,
-  getLocalNhValue,
-  getAnnualIncome
+  getLocalNhValue
 } as CalculationService

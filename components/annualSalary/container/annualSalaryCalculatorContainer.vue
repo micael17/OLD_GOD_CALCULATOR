@@ -1,35 +1,55 @@
 <script setup lang="ts">
 import CalculationService from '#d/calculation/CalculationService'
 import InputCp from '#c/Tax/ui/cpInput.vue'
-import Xlsx from "#d/etc/xlsx";
+import SalaryService from "#d/salary/SalaryService";
 
-const familyCnt = ref("")
-const childCnt = ref("")
-const monthlyIncome = ref("")
+const familyCnt = ref("1")
+const childCnt = ref("0")
+const monthlyIncomeModel = ref("")
+const deductionAmountModel = ref(CalculationService.addCommas("200000"))
 const annualIncome = ref("")
 const taxModel = ref("")
 const localTaxModel = ref("")
-const totalTaxModel = ref("")
+const pensionTaxModel = ref("")
+const healthTaxModel = ref("")
+const careTaxModel = ref("")
+const employmentTaxModel = ref("")
+const realMonthlySalaryModel = ref("")
 
 const addCommas = (value: string) => CalculationService.addCommas(value)
 
 const onSubmit = async () => {
-  const mIncome = CalculationService.removeCommas(monthlyIncome.value)
-  const { tax, localTax, totalTax } = await Xlsx.getResult(Number(mIncome), Number(familyCnt.value), Number(childCnt.value))
+  const mIncome = CalculationService.removeCommas(monthlyIncomeModel.value)
+  const dAmount = CalculationService.removeCommas(deductionAmountModel.value)
+  const { pensionTax, healthTax, careTax, employmentTax, incomeTax, localIncomeTax, realMonthlySalary } = await SalaryService.getRealSalary({
+     monthlySalary: Number(mIncome),
+     deductionAmount: Number(dAmount),
+     familyCnt: Number(familyCnt.value),
+     childCnt:  Number(childCnt.value)
+  })
 
-  taxModel.value = addCommas(String(tax))
-  localTaxModel.value = addCommas(String(localTax))
-  totalTaxModel.value = addCommas(String(totalTax))
+  pensionTaxModel.value = addCommas(String(pensionTax))
+  healthTaxModel.value = addCommas(String(healthTax))
+  careTaxModel.value = addCommas(String(careTax))
+  employmentTaxModel.value = addCommas(String(employmentTax))
+  realMonthlySalaryModel.value = addCommas(String(realMonthlySalary))
+  taxModel.value = addCommas(String(incomeTax))
+  localTaxModel.value = addCommas(String(localIncomeTax))
 }
 
 const onReset = () => {
-  familyCnt.value = ''
-  childCnt.value = ''
-  monthlyIncome.value = ''
+  familyCnt.value = '1'
+  childCnt.value = '0'
+  monthlyIncomeModel.value = ''
+  deductionAmountModel.value = addCommas('200000')
   annualIncome.value = ''
   taxModel.value = ''
   localTaxModel.value = ''
-  totalTaxModel.value = ''
+  pensionTaxModel.value = ''
+  healthTaxModel.value = ''
+  careTaxModel.value = ''
+  employmentTaxModel.value = ''
+  realMonthlySalaryModel.value = ''
 }
 </script>
 
@@ -39,13 +59,19 @@ const onReset = () => {
         @submit="onSubmit"
         @reset="onReset"
     >
-      <h4>월급으로 연봉계산</h4>
+      <h4>월급 실수령액 계산</h4>
       <hr>
 
       <input-cp
           title="월급"
-          v-model="monthlyIncome"
-          @input="monthlyIncome = addCommas(monthlyIncome)"
+          v-model="monthlyIncomeModel"
+          @input="monthlyIncomeModel = addCommas(monthlyIncomeModel)"
+      />
+
+      <input-cp
+          title="비과세액"
+          v-model="deductionAmountModel"
+          @input="deductionAmountModel = addCommas(deductionAmountModel)"
       />
 
       <input-cp
@@ -64,6 +90,32 @@ const onReset = () => {
       </div>
 
       <input-cp
+          title="월급 실수령액"
+          v-model="realMonthlySalaryModel"
+          readonly
+      />
+      <hr>
+      <input-cp
+          title="국민연금"
+          v-model="pensionTaxModel"
+          readonly
+      />
+      <input-cp
+          title="건강보험"
+          v-model="healthTaxModel"
+          readonly
+      />
+      <input-cp
+          title="장기요양보험"
+          v-model="careTaxModel"
+          readonly
+      />
+      <input-cp
+          title="고용보험"
+          v-model="employmentTaxModel"
+          readonly
+      />
+      <input-cp
           title="소득세"
           v-model="taxModel"
           readonly
@@ -71,11 +123,6 @@ const onReset = () => {
       <input-cp
           title="지방소득세"
           v-model="localTaxModel"
-          readonly
-      />
-      <input-cp
-          title="총소득세"
-          v-model="totalTaxModel"
           readonly
       />
     </q-form>
