@@ -35,7 +35,7 @@
             </q-item>
             <q-item clickable v-close-popup tabindex="3" to="/annualSalary">
               <q-item-section>
-                <q-item-label>엑셀</q-item-label>
+                <q-item-label>연봉 계산기</q-item-label>
               </q-item-section>
             </q-item>
           </q-list>
