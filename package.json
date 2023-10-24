@@ -6,6 +6,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev --host",
     "generate": "nuxt generate",
+    "start": "nuxt start",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
@@ -17,11 +18,11 @@
     "nuxt-quasar-ui": "^2.0.6",
     "typescript": "^5.2.2",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.5",
-    "xlsx": "^0.18.5"
+    "vue-router": "^4.2.5"
   },
   "dependencies": {
     "@quasar/extras": "^1.16.7",
-    "quasar": "^2.12.7"
+    "quasar": "^2.12.7",
+    "xlsx": "^0.18.5"
   }
 }
