@@ -23,14 +23,19 @@
                 <q-item-label>부가세 계산기</q-item-label>
               </q-item-section>
             </q-item>
-            <q-item clickable v-close-popup tabindex="0" to="/Nh">
+            <q-item clickable v-close-popup tabindex="1" to="/Nh">
               <q-item-section>
                 <q-item-label>Nh 계산기</q-item-label>
               </q-item-section>
             </q-item>
-            <q-item clickable v-close-popup tabindex="0" to="/character">
+            <q-item clickable v-close-popup tabindex="2" to="/character">
               <q-item-section>
                 <q-item-label>글자수세기</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item clickable v-close-popup tabindex="3" to="/annualSalary">
+              <q-item-section>
+                <q-item-label>엑셀</q-item-label>
               </q-item-section>
             </q-item>
           </q-list>

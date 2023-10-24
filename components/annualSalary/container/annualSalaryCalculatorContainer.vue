@@ -1,45 +1,25 @@
 <script setup lang="ts">
 import CalculationService from '#d/calculation/CalculationService'
 import InputCp from '#c/Tax/ui/cpInput.vue'
-import xml2json from "../../../assets/domain/etc/xml2json";
+import Xlsx from "#d/etc/xlsx";
 
 const familyCnt = ref("")
 const childCnt = ref("")
 const monthlyIncome = ref("")
 const annualIncome = ref("")
+const taxModel = ref("")
+const localTaxModel = ref("")
+const totalTaxModel = ref("")
 
 const addCommas = (value: string) => CalculationService.addCommas(value)
 
 const onSubmit = async () => {
+  const mIncome = CalculationService.removeCommas(monthlyIncome.value)
+  const { tax, localTax, totalTax } = await Xlsx.getResult(Number(mIncome), Number(familyCnt.value), Number(childCnt.value))
 
-  const data = await xml2json.getTaxData(familyCnt.value, childCnt.value, monthlyIncome.value);
-  console.log('data', data)
-
-  // 입력에서 콤마(,) 제거
-  const json = xml2json.xmlToJson('<map id=\'\' >\n' +
-      '    <map id=\'resultMsg\' >\n' +
-      '        <detailMsg></detailMsg>\n' +
-      '        <msg></msg>\n' +
-      '        <code></code>\n' +
-      '        <result>S</result>\n' +
-      '    </map>\n' +
-      '    <ddcTrgtFmlyCnt>1</ddcTrgtFmlyCnt>\n' +
-      '    <chldCnt>0</chldCnt>\n' +
-      '    <map id=\'lbrIncSmpTxamtDVO\' >\n' +
-      '        <inctx>74350</inctx>\n' +
-      '        <searchLstAltDtm></searchLstAltDtm>\n' +
-      '        <lclInctx>7430</lclInctx>\n' +
-      '        <pmtTxamtSum>81780</pmtTxamtSum>\n' +
-      '        <statusValue></statusValue>\n' +
-      '    </map>\n' +
-      '    <applcYrMmDd>20230228</applcYrMmDd>\n' +
-      '    <smpTxamtIncClCd>01</smpTxamtIncClCd>\n' +
-      '    <mmSnw>3000000</mmSnw>\n' +
-      '</map>')
-
-  if (json) {
-    console.log('json: ', json)
-  }
+  taxModel.value = addCommas(String(tax))
+  localTaxModel.value = addCommas(String(localTax))
+  totalTaxModel.value = addCommas(String(totalTax))
 }
 
 const onReset = () => {
@@ -47,6 +27,9 @@ const onReset = () => {
   childCnt.value = ''
   monthlyIncome.value = ''
   annualIncome.value = ''
+  taxModel.value = ''
+  localTaxModel.value = ''
+  totalTaxModel.value = ''
 }
 </script>
 
@@ -82,12 +65,17 @@ const onReset = () => {
 
       <input-cp
           title="소득세"
-          v-model="annualIncome"
+          v-model="taxModel"
           readonly
       />
       <input-cp
           title="지방소득세"
-          v-model="annualIncome"
+          v-model="localTaxModel"
+          readonly
+      />
+      <input-cp
+          title="총소득세"
+          v-model="totalTaxModel"
           readonly
       />
     </q-form>
