@@ -22,7 +22,6 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.16.7",
-    "quasar": "^2.12.7",
-    "xlsx": "^0.18.5"
+    "quasar": "^2.12.7"
   }
 }
