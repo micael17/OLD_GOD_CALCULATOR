@@ -9,13 +9,14 @@ defineProps<{
 <template>
   <div class="card">
     <div class="title">{{ title }}</div>
-    <div class="definition">{{ desc }}</div>
+    <div class="definition" v-html="desc"></div>
   </div>
 </template>
 
 <style scoped>
   .card {
-    background: #f5f5f5;
+    width: 100%;
+    background: #fcfcfc;
     border: 1px solid #ddd;
     padding: 10px;
     margin: 10px;
@@ -25,6 +26,7 @@ defineProps<{
   .title {
     font-size: 26px;
     font-weight: bold;
+    color: #4e54c8;
   }
 
   .definition {

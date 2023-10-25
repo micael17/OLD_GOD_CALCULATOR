@@ -2,6 +2,7 @@
 defineProps<{
   title: string
   modelValue: string
+  postfix?: string
   label?: string
   hint?: string
   disabled?: boolean
@@ -17,12 +18,11 @@ defineEmits(['update:modelValue'])
     <div class="flex">
       <input
           :value="modelValue"
-          type="text"
           :disabled="disabled"
           :readonly="readonly"
           @input="$emit('update:modelValue', $event.target.value)"
       />
-      <span>원</span>
+      <span v-if="postfix">{{ postfix }}</span>
     </div>
     <label v-if="hint && hint.length > 0">{{ hint }}</label>
   </div>

@@ -35,6 +35,7 @@ const onReset = () => {
 
       <input-cp
           title="합계금액"
+          postfix="원"
           v-model="totalModel"
           @input="totalModel = addCommas(totalModel)"
       />
@@ -46,6 +47,7 @@ const onReset = () => {
 
       <input-cp
           title="공급가액"
+          postfix="원"
           v-model="supplyModel"
           hint="입력하신 합계 금액에서 부가세액을 뺀 금액"
           readonly
@@ -53,6 +55,7 @@ const onReset = () => {
 
       <input-cp
           title="부가세액"
+          postfix="원"
           v-model="vatModel"
           hint="입력하신 합계 금액에 포함된 부가세액"
           readonly
