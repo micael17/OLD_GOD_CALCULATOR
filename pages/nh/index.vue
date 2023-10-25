@@ -17,7 +17,7 @@ useHead({
     {name: 'keywords', content: '농협, 지역농협 공급가 및 부가세 계산기'},
     {name: 'description', content: '농협, 지역농협 공급가 및 부가세 계산기'},
     {name: 'og:locale', content: 'ko_KR'},
-    {name: 'og:type', content: 'article'},
+    {name: 'og:type', content: 'website'},
     {name: 'og:title', content: 'NH 계산기 - 만능계산기'},
     {name: 'og:description', content: '농협, 지역농협 공급가 및 부가세 계산기'},
     {name: 'og:url', content: 'https://god-caclulator.com/nh'},

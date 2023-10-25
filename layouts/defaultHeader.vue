@@ -33,7 +33,7 @@
                 <q-item-label>월급 계산기</q-item-label>
               </q-item-section>
             </q-item>
-            <q-item clickable v-close-popup tabindex="99" to="/Nh">
+            <q-item clickable v-close-popup tabindex="99" to="/nh">
               <q-item-section>
                 <q-item-label>Nh 계산기</q-item-label>
               </q-item-section>
