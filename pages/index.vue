@@ -1,7 +1,8 @@
 <template>
-  <div>
-  </div>
+  <q-page>
+    <home-links-container />
+  </q-page>
 </template>
 <script setup lang="ts">
-  await navigateTo('/tax')
+  import HomeLinksContainer from "#c/Common/container/homeLinksContainer.vue";
 </script>
