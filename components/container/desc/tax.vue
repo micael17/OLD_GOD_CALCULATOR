@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import DescriptionCard from "#c/Common/ui/DescriptionCard.vue";
-
 const descriptionList = {
   tax: {
     title: "부가세란?",
@@ -29,12 +27,12 @@ const descriptionList = {
 
 <template>
   <div>
-    <description-card :title="descriptionList.tax.title" :desc="descriptionList.tax.desc" />
+    <ui-desc-card :title="descriptionList.tax.title" :desc="descriptionList.tax.desc" />
   </div>
   <div>
-    <description-card :title="descriptionList.supply.title" :desc="descriptionList.supply.desc" />
+    <ui-desc-card :title="descriptionList.supply.title" :desc="descriptionList.supply.desc" />
   </div>
   <div>
-    <description-card :title="descriptionList.total.title" :desc="descriptionList.total.desc" />
+    <ui-desc-card :title="descriptionList.total.title" :desc="descriptionList.total.desc" />
   </div>
 </template>

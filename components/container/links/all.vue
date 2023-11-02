@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import CpImageCard from "#c/Common/ui/cpImageCard.vue";
+import CpImageCard from "#c/ui/image-card.vue";
 </script>
 
 <template>

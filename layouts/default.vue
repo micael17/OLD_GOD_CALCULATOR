@@ -6,7 +6,7 @@ import Footer from "~/layouts/defaultFooter.vue";
 <template>
   <q-layout view="hhh lpR fff">
     <Header />
-    <q-page-container class="row justify-center items-start content-start">
+    <q-page-container class="row justify-center">
       <slot />
     </q-page-container>
     <Footer />

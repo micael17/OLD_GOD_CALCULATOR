@@ -1,18 +1,15 @@
 <template>
   <q-page>
     <div class="row q-ma-lg justify-center items-start content-start">
-        <monthly-salary-calculator-container />
+        <container-calculator-monthly-salary />
     </div>
     <hr>
     <div class="row q-ma-lg">
-      <monthly-salary-desc-container />
+      <container-desc-monthly-salary />
     </div>
   </q-page>
 </template>
 <script setup lang="ts">
-import MonthlySalaryCalculatorContainer from "#c/annualSalary/container/monthlySalaryCalculatorContainer.vue";
-import MonthlySalaryDescContainer from "#c/annualSalary/container/monthlySalaryDescContainer.vue";
-
 useHead({
   title: '월급 계산기 - 만능계산기',
   meta: [

@@ -2,19 +2,16 @@
   <q-page>
     <div class="row q-ma-lg justify-center items-start content-start">
       <div class="col">
-        <CharacterCounterContainer />
+        <container-calculator-character />
       </div>
     </div>
     <hr>
     <div class="row q-ma-lg">
-      <character-description-container />
+      <container-desc-character />
     </div>
   </q-page>
 </template>
 <script setup lang="ts">
-import CharacterCounterContainer from "#c/Counter/container/characterCounterContainer.vue";
-import CharacterDescriptionContainer from "#c/Counter/container/characterDescriptionContainer.vue";
-
 useHead({
   title: '글자수 계산기 - 만능계산기',
   meta: [

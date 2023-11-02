@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import InputCp from '#c/Tax/ui/cpInput.vue'
 import AgeService from "#d/age/AgeService";
 
 const today = new Date()
@@ -41,7 +40,7 @@ const onReset = () => {
   >
     <h4>만나이 계산기</h4>
     <hr>
-    <input-cp
+    <ui-input
         title="생년월일"
         place-holder="ex)19990123"
         maxlength="8"
@@ -49,7 +48,7 @@ const onReset = () => {
         @input="birthDateModel = removeCharacter(birthDateModel)"
     />
 
-    <input-cp
+    <ui-input
         title="기준 날짜(기본값: 오늘)"
         maxlength="8"
         v-model="refDateModel"
@@ -59,7 +58,7 @@ const onReset = () => {
     <q-btn label="계산 (엔터)" type="submit" color="primary" size="lg"/>
     <q-btn label="초기화" type="reset" color="white" text-color="black" size="lg" class="q-ml-sm" />
 
-    <input-cp
+    <ui-input
         title="만 나이"
         v-model="manAgeModel"
         readonly

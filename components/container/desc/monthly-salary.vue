@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import DescriptionCard from "#c/Common/ui/DescriptionCard.vue";
-
 const descriptionList = {
   first: {
     title: "유의사항",
@@ -14,5 +12,5 @@ const descriptionList = {
 </script>
 
 <template>
-  <description-card :title="descriptionList.first.title" :desc="descriptionList.first.desc" />
+  <ui-desc-card :title="descriptionList.first.title" :desc="descriptionList.first.desc" />
 </template>

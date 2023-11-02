@@ -2,19 +2,16 @@
   <q-page>
     <div class="row q-ma-lg justify-center items-start content-start">
       <div class="col">
-        <man-age-calculator-container />
+        <container-calculator-man-age />
       </div>
     </div>
     <hr>
     <div class="row q-ma-lg">
-      <man-age-desc-container />
+      <container-desc-man-age />
     </div>
   </q-page>
 </template>
 <script setup lang="ts">
-import ManAgeDescContainer from "#c/age/container/manAgeDescContainer.vue";
-import ManAgeCalculatorContainer from "#c/age/container/manAgeCalculatorContainer.vue";
-
 useHead({
   title: '만나이 계산기 - 만능계산기',
   meta: [

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import CalculationService from '#d/calculation/CalculationService'
-import InputCp from '#c/Tax/ui/cpInput.vue'
 
 const totalModel = ref("0")
 const supplyModel = ref("")
@@ -33,7 +32,7 @@ const onReset = () => {
       <h4>공급가액으로 계산</h4>
       <hr>
 
-      <input-cp
+      <ui-input
           title="공급가액"
           postfix="원"
           v-model="supplyModel"
@@ -45,7 +44,7 @@ const onReset = () => {
         <q-btn label="초기화" type="reset" color="white" text-color="black" size="lg" class="q-ml-sm" />
       </div>
 
-      <input-cp
+      <ui-input
           title="합계금액"
           postfix="원"
           v-model="totalModel"
@@ -53,7 +52,7 @@ const onReset = () => {
           readonly
       />
 
-      <input-cp
+      <ui-input
           title="부가세액"
           postfix="원"
           v-model="vatModel"

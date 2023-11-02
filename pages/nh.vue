@@ -2,14 +2,12 @@
   <q-page>
     <div class="row q-ma-lg justify-center items-start content-start">
       <div class="col-shrink">
-        <NhCalculatorContainer />
+        <container-calculator-nh />
       </div>
     </div>
   </q-page>
 </template>
 <script setup lang="ts">
-import NhCalculatorContainer from "#c/Tax/container/NhCalculatorContainer.vue";
-
 useHead({
   title: 'NH 계산기 - 만능계산기',
   meta: [

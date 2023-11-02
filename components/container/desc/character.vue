@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import DescriptionCard from "#c/Common/ui/DescriptionCard.vue";
-
 const descriptionList = {
   first: {
     title: "글자수 세기란?",
@@ -41,9 +39,9 @@ const descriptionList = {
 
 <template>
   <div>
-    <description-card :title="descriptionList.first.title" :desc="descriptionList.first.desc" />
+    <ui-desc-card :title="descriptionList.first.title" :desc="descriptionList.first.desc" />
   </div>
   <div>
-    <description-card :title="descriptionList.second.title" :desc="descriptionList.second.desc" />
+    <ui-desc-card :title="descriptionList.second.title" :desc="descriptionList.second.desc" />
   </div>
 </template>
