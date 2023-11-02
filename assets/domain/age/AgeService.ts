@@ -1,6 +1,3 @@
-import calculationService from "#d/calculation/CalculationService";
-import {getFormat} from "colord";
-
 interface AgeService {
     calculateKoreanAge(inputBirthDate: Date, inputRefDate: Date): number
     getDateFromString(inputDateString: string): Date
@@ -31,14 +28,11 @@ const calculateKoreanAge: AgeService['calculateKoreanAge'] = (inputBirthDate, in
 
 const getDateFromString: AgeService['getDateFromString'] = (inputDateString) => {
     const dateString = inputDateString.replace(/-/g, '')
-
-    const date = new Date (
+    return new Date (
         Number(dateString.slice(0, 4)),  // 연도
         Number(dateString.slice(4, 6)) - 1,  // 월
         Number(dateString.slice(6, 8)) // 일
     )
-
-    return date
 }
 
 const getFormatStringFromDate: AgeService['getFormatStringFromDate'] = (inputDate: Date) => {
@@ -65,11 +59,7 @@ const isValidDate: AgeService['isValidDate'] = (dateString) => {
     }
 
     //입력받은 값과 Date타입으로 변환한 값을 비교하여 같은지 확인
-    if (dateString !== getFormatStringFromDate(getDateFromString(dateString))) {
-        return false
-    }
-
-    return true
+    return dateString === getFormatStringFromDate(getDateFromString(dateString));
 }
 
 export default {
