@@ -6,16 +6,20 @@
     <q-header elevated class="row justify-center header">
       <q-toolbar>
         <q-toolbar-title class="title">
-          <q-icon name="calculate" size="xl" style="padding-bottom: 0.1rem;"/>만능계산기
+          <q-item class="link" to="/">
+            <q-icon name="calculate" size="xl" style="padding-bottom: 0.1rem;"/>만능계산기
+          </q-item>
         </q-toolbar-title>
         <q-btn-dropdown stretch flat label="메뉴">
           <q-list>
             <q-item-label header class="item-header">
-              <q-item-section>
-                <div>
-                  <q-icon name="calculate" size="sm"/>만능
-                </div>
-              </q-item-section>
+              <q-item clickable v-close-popup tabindex="0" to="/">
+                <q-item-section>
+                  <div>
+                    <q-icon name="calculate" size="sm" />만능
+                  </div>
+                </q-item-section>
+              </q-item>
               <q-separator spaced />
             </q-item-label>
             <q-item clickable v-close-popup tabindex="0" to="/tax">
@@ -31,6 +35,11 @@
             <q-item clickable v-close-popup tabindex="2" to="/monthlySalary">
               <q-item-section>
                 <q-item-label>월급 계산기</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item clickable v-close-popup tabindex="3" to="/manAge">
+              <q-item-section>
+                <q-item-label>만나이 계산기</q-item-label>
               </q-item-section>
             </q-item>
             <q-item clickable v-close-popup tabindex="99" to="/nh">
@@ -63,6 +72,11 @@
 
 .item-header {
   padding-bottom: 0;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
 }
 
 /*@media only screen and (max-width: 768px) {

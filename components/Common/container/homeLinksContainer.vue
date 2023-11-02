@@ -20,6 +20,17 @@ import CpImageCard from "#c/Common/ui/cpImageCard.vue";
       </NuxtLink>
     </div>
   </div>
+  <div class="row q-ma-lg justify-center items-start content-start">
+    <div class="col q-pa-sm">
+      <NuxtLink to="/manAge" class="link">
+        <cp-image-card iconName="person_remove" text-content="만나이 계산기" />
+      </NuxtLink>
+    </div>
+    <div class="col">
+    </div>
+    <div class="col">
+    </div>
+  </div>
 </template>
 
 <style scoped>

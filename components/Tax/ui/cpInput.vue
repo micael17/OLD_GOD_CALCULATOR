@@ -1,12 +1,15 @@
 <script setup lang="ts">
 defineProps<{
   title: string
+  placeHolder?: string
+  type?: string
   modelValue: string
   postfix?: string
   label?: string
   hint?: string
   disabled?: boolean
   readonly?: boolean
+  maxlength?: string
 }>()
 
 defineEmits(['update:modelValue'])
@@ -20,7 +23,10 @@ defineEmits(['update:modelValue'])
           :value="modelValue"
           :disabled="disabled"
           :readonly="readonly"
-          @input="$emit('update:modelValue', $event.target.value)"
+          :placeholder="placeHolder"
+          :type="type"
+          :maxlength="maxlength"
+          @input="$emit('update:modelValue', $event.target?.value)"
       />
       <span v-if="postfix">{{ postfix }}</span>
     </div>
