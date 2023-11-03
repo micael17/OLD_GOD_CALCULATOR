@@ -9,12 +9,12 @@
       </NuxtLink>
     </div>
     <div class="col q-pa-sm">
-      <NuxtLink to="/monthly-salary" class="link">
+      <NuxtLink to="/monthlySalary" class="link">
         <ui-image-card iconName="local_atm" text-content="월급 실수령액 계산기" />
       </NuxtLink>
     </div>
     <div class="col q-pa-sm">
-      <NuxtLink to="/annual-salary" class="link">
+      <NuxtLink to="/annualSalary" class="link">
         <ui-image-card iconName="local_atm" text-content="연봉 실수령액 계산기" />
       </NuxtLink>
     </div>
@@ -26,7 +26,7 @@
       </NuxtLink>
     </div>
     <div class="col q-pa-sm">
-      <NuxtLink to="/man-age" class="link">
+      <NuxtLink to="/manAge" class="link">
         <ui-image-card iconName="person_remove" text-content="만나이 계산기" />
       </NuxtLink>
     </div>

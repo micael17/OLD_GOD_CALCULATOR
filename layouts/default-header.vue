@@ -31,17 +31,17 @@
                 <q-item-label>글자수세기</q-item-label>
               </q-item-section>
             </q-item>
-            <q-item clickable v-close-popup tabindex="2" to="/monthly-salary">
+            <q-item clickable v-close-popup tabindex="2" to="/monthlySalary">
               <q-item-section>
                 <q-item-label>월급 실수령액 계산기</q-item-label>
               </q-item-section>
             </q-item>
-            <q-item clickable v-close-popup tabindex="2" to="/annual-salary">
+            <q-item clickable v-close-popup tabindex="2" to="/annualSalary">
               <q-item-section>
                 <q-item-label>연봉 실수령액 계산기</q-item-label>
               </q-item-section>
             </q-item>
-            <q-item clickable v-close-popup tabindex="3" to="/man-age">
+            <q-item clickable v-close-popup tabindex="3" to="/manAge">
               <q-item-section>
                 <q-item-label>만나이 계산기</q-item-label>
               </q-item-section>
