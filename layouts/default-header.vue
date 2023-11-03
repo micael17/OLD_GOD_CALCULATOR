@@ -5,23 +5,22 @@
   <div>
     <q-header elevated class="row justify-center header">
       <q-toolbar>
-        <q-toolbar-title class="title">
+        <q-toolbar-title class="title row col">
           <q-item class="link" to="/">
             <q-icon name="calculate" size="xl" style="padding-bottom: 0.1rem;"/>만능계산기
           </q-item>
         </q-toolbar-title>
         <q-btn-dropdown stretch flat label="메뉴">
           <q-list>
-            <q-item-label header class="item-header">
-              <q-item clickable v-close-popup tabindex="0" to="/">
-                <q-item-section>
-                  <div>
-                    <q-icon name="calculate" size="sm" />만능
-                  </div>
-                </q-item-section>
-              </q-item>
-              <q-separator spaced />
-            </q-item-label>
+            <q-item clickable v-close-popup tabindex="0" to="/">
+              <q-item-section>
+                <q-item-label header class="item-header">
+                  <q-icon name="calculate" size="sm"/>
+                  <div class="header-label"> 만능계산기</div>
+                </q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-separator />
             <q-item clickable v-close-popup tabindex="0" to="/tax">
               <q-item-section>
                 <q-item-label>부가세 계산기</q-item-label>
@@ -32,12 +31,17 @@
                 <q-item-label>글자수세기</q-item-label>
               </q-item-section>
             </q-item>
-            <q-item clickable v-close-popup tabindex="2" to="/monthlySalary">
+            <q-item clickable v-close-popup tabindex="2" to="/monthly-salary">
               <q-item-section>
-                <q-item-label>월급 계산기</q-item-label>
+                <q-item-label>월급 실수령액 계산기</q-item-label>
               </q-item-section>
             </q-item>
-            <q-item clickable v-close-popup tabindex="3" to="/manAge">
+            <q-item clickable v-close-popup tabindex="2" to="/annual-salary">
+              <q-item-section>
+                <q-item-label>연봉 실수령액 계산기</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item clickable v-close-popup tabindex="3" to="/man-age">
               <q-item-section>
                 <q-item-label>만나이 계산기</q-item-label>
               </q-item-section>
@@ -71,35 +75,14 @@
 }
 
 .item-header {
-  padding-bottom: 0;
+  padding: 0;
 }
 
-.link {
-  color: inherit;
-  text-decoration: none;
+.header-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
 }
 
-/*@media only screen and (max-width: 768px) {
-  !* 모바일 화면에서 적용할 스타일 설정 *!
-  .title {
-    font-size: 24px;
-    font-weight: normal;
-  }
-
-  .desktop-menu {
-    display: none;
-  }
-}
-
-@media only screen and (min-width: 769px) {
-  !* 데스크톱 화면에서 적용할 스타일 설정 *!
-  .title {
-    font-size: 32px;
-    font-weight: bold;
-  }
-
-  .mobile-menu {
-    display: none;
-  }
-}*/
 </style>

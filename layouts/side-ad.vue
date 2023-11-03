@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import VerticalAds from "#c/ads/verticalAds.vue";
+import VerticalAds from "#c/ads/vertical-ads.vue";
 </script>
 
 <template>

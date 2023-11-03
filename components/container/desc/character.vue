@@ -38,10 +38,6 @@ const descriptionList = {
 </script>
 
 <template>
-  <div>
     <ui-desc-card :title="descriptionList.first.title" :desc="descriptionList.first.desc" />
-  </div>
-  <div>
     <ui-desc-card :title="descriptionList.second.title" :desc="descriptionList.second.desc" />
-  </div>
 </template>

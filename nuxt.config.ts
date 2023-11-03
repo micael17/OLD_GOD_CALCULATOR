@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     '#s': path.resolve(__dirname, './assets/style'),
     '#c': path.resolve(__dirname, './components')
   },
-  css: ['~/assets/style/style.css'],
+  css: ['#s/base.css', '#s/font.css', '#s/class.css', '#s/media.css'],
   quasar: {},
   app: {
     head: {

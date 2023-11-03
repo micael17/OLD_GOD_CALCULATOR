@@ -1,41 +1,36 @@
 <script setup lang="ts">
-import CpImageCard from "#c/ui/image-card.vue";
 </script>
 
 <template>
   <div class="row q-ma-lg justify-center items-start content-start">
     <div class="col q-pa-sm">
       <NuxtLink to="/tax" class="link">
-        <cp-image-card iconName="point_of_sale" text-content="부가세 계산기" />
+        <ui-image-card iconName="point_of_sale" text-content="부가세 계산기" />
       </NuxtLink>
     </div>
     <div class="col q-pa-sm">
-      <NuxtLink to="/monthlySalary" class="link">
-        <cp-image-card iconName="local_atm" text-content="월급 실수령액 계산기" />
+      <NuxtLink to="/monthly-salary" class="link">
+        <ui-image-card iconName="local_atm" text-content="월급 실수령액 계산기" />
       </NuxtLink>
     </div>
     <div class="col q-pa-sm">
-      <NuxtLink to="/character" class="link">
-        <cp-image-card iconName="format_size" text-content="글자수 계산기" />
+      <NuxtLink to="/annual-salary" class="link">
+        <ui-image-card iconName="local_atm" text-content="연봉 실수령액 계산기" />
       </NuxtLink>
     </div>
   </div>
   <div class="row q-ma-lg justify-center items-start content-start">
     <div class="col q-pa-sm">
-      <NuxtLink to="/manAge" class="link">
-        <cp-image-card iconName="person_remove" text-content="만나이 계산기" />
+      <NuxtLink to="/character" class="link">
+        <ui-image-card iconName="format_size" text-content="글자수 계산기" />
       </NuxtLink>
     </div>
-    <div class="col">
+    <div class="col q-pa-sm">
+      <NuxtLink to="/man-age" class="link">
+        <ui-image-card iconName="person_remove" text-content="만나이 계산기" />
+      </NuxtLink>
     </div>
     <div class="col">
     </div>
   </div>
 </template>
-
-<style scoped>
-.link {
-  color: inherit;
-  text-decoration: none;
-}
-</style>

@@ -21,7 +21,3 @@ onMounted(async () => {
        data-ad-client="ca-pub-9353405093450953"
        data-ad-slot="7302084604"></ins>
 </template>
-
-<style scoped>
-
-</style>

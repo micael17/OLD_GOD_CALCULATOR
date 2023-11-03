@@ -1,7 +1,7 @@
 <template>
   <q-page>
     <div class="row q-ma-lg justify-center items-start content-start">
-      <div class="col-shrink">
+      <div class="col q-ma-lg">
         <container-calculator-nh />
       </div>
     </div>

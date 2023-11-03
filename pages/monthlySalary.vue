@@ -1,7 +1,9 @@
 <template>
   <q-page>
     <div class="row q-ma-lg justify-center items-start content-start">
+      <div class="col q-ma-md">
         <container-calculator-monthly-salary />
+      </div>
     </div>
     <hr>
     <div class="row q-ma-lg">

@@ -26,13 +26,7 @@ const descriptionList = {
 </script>
 
 <template>
-  <div>
-    <ui-desc-card :title="descriptionList.tax.title" :desc="descriptionList.tax.desc" />
-  </div>
-  <div>
-    <ui-desc-card :title="descriptionList.supply.title" :desc="descriptionList.supply.desc" />
-  </div>
-  <div>
-    <ui-desc-card :title="descriptionList.total.title" :desc="descriptionList.total.desc" />
-  </div>
+  <ui-desc-card :title="descriptionList.tax.title" :desc="descriptionList.tax.desc" />
+  <ui-desc-card :title="descriptionList.supply.title" :desc="descriptionList.supply.desc" />
+  <ui-desc-card :title="descriptionList.total.title" :desc="descriptionList.total.desc" />
 </template>

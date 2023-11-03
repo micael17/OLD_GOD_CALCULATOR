@@ -14,12 +14,12 @@ const pensionTaxModel = ref("")
 const healthTaxModel = ref("")
 const careTaxModel = ref("")
 const employmentTaxModel = ref("")
-const realMonthlySalaryModel = ref("")
+const realAnnualSalaryModel = ref("")
 
 const addCommas = (value: string) => CalculationService.addCommas(value)
 
 const onSubmit = async () => {
-  loading.value = true
+  // loading.value = true
   const mIncome = CalculationService.removeCommas(monthlyIncomeModel.value)
   const dAmount = CalculationService.removeCommas(deductionAmountModel.value)
   const { pensionTax, healthTax, careTax, employmentTax, incomeTax, localIncomeTax, realMonthlySalary } = await SalaryService.getRealSalary({
@@ -33,7 +33,7 @@ const onSubmit = async () => {
   healthTaxModel.value = addCommas(String(healthTax))
   careTaxModel.value = addCommas(String(careTax))
   employmentTaxModel.value = addCommas(String(employmentTax))
-  realMonthlySalaryModel.value = addCommas(String(realMonthlySalary))
+  realAnnualSalaryModel.value = addCommas(String(realMonthlySalary * 12))
   taxModel.value = addCommas(String(incomeTax))
   localTaxModel.value = addCommas(String(localIncomeTax))
   loading.value = false
@@ -51,13 +51,12 @@ const onReset = () => {
   healthTaxModel.value = ''
   careTaxModel.value = ''
   employmentTaxModel.value = ''
-  realMonthlySalaryModel.value = ''
-  loading.value = false
+  realAnnualSalaryModel.value = ''
 }
 </script>
 
 <template>
-  <ui-form-two-cols title="월급 실수령액 계산" :loading="loading" @onSubmit="onSubmit" @onReset="onReset">
+  <ui-form-two-cols title="연봉 실수령액 계산" :loading="loading" @onSubmit="onSubmit" @onReset="onReset">
     <template #input>
       <ui-input
           title="월급"
@@ -96,9 +95,9 @@ const onReset = () => {
 
     <template #result>
       <ui-input
-          title="월급 실수령액"
+          title="연봉 실수령액"
           postfix="원"
-          v-model="realMonthlySalaryModel"
+          v-model="realAnnualSalaryModel"
           readonly
       />
       <hr>

@@ -17,7 +17,3 @@ onMounted(async () => {
        data-ad-format="auto"
        data-full-width-responsive="true"></ins>
 </template>
-
-<style scoped>
-
-</style>
