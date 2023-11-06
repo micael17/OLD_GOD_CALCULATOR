@@ -46,6 +46,11 @@
                 <q-item-label>만나이 계산기</q-item-label>
               </q-item-section>
             </q-item>
+            <q-item clickable v-close-popup tabindex="4" to="/krEnAddr">
+              <q-item-section>
+                <q-item-label>한글-영문 주소변환기</q-item-label>
+              </q-item-section>
+            </q-item>
             <q-item clickable v-close-popup tabindex="99" to="/nh">
               <q-item-section>
                 <q-item-label>Nh 계산기</q-item-label>

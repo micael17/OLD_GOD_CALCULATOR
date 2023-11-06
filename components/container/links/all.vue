@@ -30,7 +30,10 @@
         <ui-image-card iconName="person_remove" text-content="만나이 계산기" />
       </NuxtLink>
     </div>
-    <div class="col">
+    <div class="col q-pa-sm">
+      <NuxtLink to="/krEnAddr" class="link">
+        <ui-image-card iconName="home" text-content="한글-영문 주소변환기" />
+      </NuxtLink>
     </div>
   </div>
 </template>
