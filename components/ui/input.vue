@@ -18,8 +18,9 @@ defineEmits(['update:modelValue'])
 <template>
   <div class="input-group">
     <div class="input-title">{{ title }}</div>
-    <div class="flex">
+    <div class="row">
       <input
+          class="col"
           :value="modelValue"
           :disabled="disabled"
           :readonly="readonly"
@@ -28,7 +29,7 @@ defineEmits(['update:modelValue'])
           :maxlength="maxlength"
           @input="$emit('update:modelValue', $event.target?.value)"
       />
-      <span v-if="postfix">{{ postfix }}</span>
+      <span class="col-1" v-if="postfix">{{ postfix }}</span>
     </div>
     <label v-if="hint && hint.length > 0">{{ hint }}</label>
   </div>
@@ -45,13 +46,11 @@ defineEmits(['update:modelValue'])
     }
 
     & span {
-      width: 10%;
       padding: 10px;
       font-size: 18px;
     }
 
     & input {
-      width: 90%;
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 3px;
