@@ -1,10 +1,10 @@
 <template>
   <q-page>
     <div class="row q-ma-lg justify-center items-start content-start">
-      <div class="col q-mx-lg">
+      <div class="col-shrink">
         <container-calculator-tax-total/>
       </div>
-      <div class="col q-mx-lg">
+      <div class="col-shrink">
         <container-calculator-tax-supply />
       </div>
     </div>
