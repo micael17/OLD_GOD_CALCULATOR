@@ -29,7 +29,7 @@ export default defineNuxtConfig({
       }, {
         defer: true,
         src: '/GoogleAnalytics.js'
-      }, { // 구글 애드센스 실행
+      }, { // 구글 애드센스 실행 (public폴더)
         defer: true,
         src: '/GoogleAds.js'
       }],
