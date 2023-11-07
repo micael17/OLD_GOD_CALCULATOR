@@ -47,7 +47,7 @@ useHead({
             @submit="onSubmit"
             @reset="onReset"
         >
-          <h4>한글 -> 영문주소 변환기</h4>
+          <h4>한글-영문 주소 변환기</h4>
           <hr>
 
           <ui-input
