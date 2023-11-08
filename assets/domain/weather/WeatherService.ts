@@ -62,7 +62,7 @@ const getWeather = async (location: string) => {
         ny: item.ny
     }
     const queryString = new URLSearchParams(query).toString()
-    const res = await fetch('http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst?' + queryString)
+    const res = await fetch('https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst?' + queryString)
 
     const { response }: { response: Response } = await res.json()
     if (!response || response?.header?.resultCode !== '00') return
