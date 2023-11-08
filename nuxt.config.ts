@@ -33,7 +33,7 @@ export default defineNuxtConfig({
         defer: true,
         src: '/GoogleAds.js'
       }],
-      meta: [{ //구글 애드센스 인식시키기
+      meta: [{ //구글 애드센스 인식시키기 (사이트소유권-메타태그 넣기)
         name: 'google-adsense-account',
         content: 'ca-pub-9353405093450953'
       }]
