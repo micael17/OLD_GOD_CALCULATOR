@@ -22,7 +22,6 @@ const onReset = () => {
   resultModel.value = {} as AddrResult
 }
 
-
 useHead({
   title: '영문주소 변환기 - 만능계산기',
   meta: [

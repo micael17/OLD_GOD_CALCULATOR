@@ -9,12 +9,14 @@ const daegu = ref<WeatherValue | undefined>()
 const daejn = ref<WeatherValue | undefined>()
 const gwaju = ref<WeatherValue | undefined>()
 
-seoul.value = await WeatherService.getWeather('SEOUL')
-busan.value = await WeatherService.getWeather('BUSAN')
-inchn.value = await WeatherService.getWeather('INCHN')
-daegu.value = await WeatherService.getWeather('DAEGU')
-daejn.value = await WeatherService.getWeather('DAEJN')
-gwaju.value = await WeatherService.getWeather('GWAJU')
+onMounted(async () => {
+  seoul.value = await WeatherService.getWeather('SEOUL')
+  busan.value = await WeatherService.getWeather('BUSAN')
+  inchn.value = await WeatherService.getWeather('INCHN')
+  daegu.value = await WeatherService.getWeather('DAEGU')
+  daejn.value = await WeatherService.getWeather('DAEJN')
+  gwaju.value = await WeatherService.getWeather('GWAJU')
+})
 
 </script>
 
