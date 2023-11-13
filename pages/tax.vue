@@ -25,7 +25,7 @@ useHead({
     {name: 'og:type', content: 'website'},
     {name: 'og:title', content: '부가세 계산기 - 만능계산기'},
     {name: 'og:description', content: '부가세, 부가가치세를 쉽계 계산하세요. 공급가액과 합계금액으로도 계산할 수 있습니다. 세련되고 미니멀한 컨셉으로 제작되었습니다.'},
-    {name: 'og:url', content: 'https://god-caclulator.com'},
+    {name: 'og:url', content: 'https://god-caclulator.com/tax'},
     {name: 'og:site_name', content: '만능 계산기'},
   ],
 })
