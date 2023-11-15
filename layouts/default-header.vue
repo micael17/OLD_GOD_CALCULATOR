@@ -20,6 +20,7 @@ const drawerRight = ref(false)
           <q-btn flat padding="xs sm" to="/character" label="글자수세기" />
           <q-btn flat padding="xs sm" to="/manAge" label="만나이 계산기" />
           <q-btn flat padding="xs sm" to="/krEnAddr" label="영문주소 변환" />
+          <q-btn flat padding="xs sm" to="/pyeong" label="평수 계산기" />
         </q-btn-group>
 
         <!-- 모바일 메뉴 -->
@@ -49,19 +50,24 @@ const drawerRight = ref(false)
                   <q-item-label>월급 실수령액 계산기</q-item-label>
                 </q-item-section>
               </q-item>
-              <q-item clickable v-close-popup tabindex="2" to="/annualSalary">
+              <q-item clickable v-close-popup tabindex="3" to="/annualSalary">
                 <q-item-section>
                   <q-item-label>연봉 실수령액 계산기</q-item-label>
                 </q-item-section>
               </q-item>
-              <q-item clickable v-close-popup tabindex="3" to="/manAge">
+              <q-item clickable v-close-popup tabindex="4" to="/manAge">
                 <q-item-section>
                   <q-item-label>만나이 계산기</q-item-label>
                 </q-item-section>
               </q-item>
-              <q-item clickable v-close-popup tabindex="4" to="/krEnAddr">
+              <q-item clickable v-close-popup tabindex="5" to="/krEnAddr">
                 <q-item-section>
                   <q-item-label>한글-영문 주소변환기</q-item-label>
+                </q-item-section>
+              </q-item>
+              <q-item clickable v-close-popup tabindex="6" to="/pyeong">
+                <q-item-section>
+                  <q-item-label>평수 계산기</q-item-label>
                 </q-item-section>
               </q-item>
               <q-item clickable v-close-popup tabindex="99" to="/nh">

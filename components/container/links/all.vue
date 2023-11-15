@@ -36,4 +36,15 @@
       </NuxtLink>
     </div>
   </div>
+  <div class="row q-ma-lg justify-center items-start content-start">
+    <div class="col q-pa-sm">
+      <NuxtLink to="/pyeong" class="link">
+        <ui-image-card iconName="swap_horiz" text-content="평수 계산기" />
+      </NuxtLink>
+    </div>
+    <div class="col q-pa-sm">
+    </div>
+    <div class="col q-pa-sm">
+    </div>
+  </div>
 </template>
