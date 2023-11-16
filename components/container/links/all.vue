@@ -43,6 +43,9 @@
       </NuxtLink>
     </div>
     <div class="col q-pa-sm">
+      <NuxtLink to="/ip" class="link">
+        <ui-image-card iconName="swap_horiz" text-content="내 ip 주소 확인" />
+      </NuxtLink>
     </div>
     <div class="col q-pa-sm">
     </div>

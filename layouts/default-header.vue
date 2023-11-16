@@ -21,6 +21,7 @@ const drawerRight = ref(false)
           <q-btn flat padding="xs sm" to="/manAge" label="만나이 계산기" />
           <q-btn flat padding="xs sm" to="/krEnAddr" label="영문주소 변환" />
           <q-btn flat padding="xs sm" to="/pyeong" label="평수 계산기" />
+          <q-btn flat padding="xs sm" to="/ip" label="내 ip 주소 확인" />
         </q-btn-group>
 
         <!-- 모바일 메뉴 -->
@@ -68,6 +69,11 @@ const drawerRight = ref(false)
               <q-item clickable v-close-popup tabindex="6" to="/pyeong">
                 <q-item-section>
                   <q-item-label>평수 계산기</q-item-label>
+                </q-item-section>
+              </q-item>
+              <q-item clickable v-close-popup tabindex="7" to="/ip">
+                <q-item-section>
+                  <q-item-label>내 ip 주소 확인</q-item-label>
                 </q-item-section>
               </q-item>
               <q-item clickable v-close-popup tabindex="99" to="/nh">
