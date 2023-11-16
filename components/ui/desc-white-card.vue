@@ -2,18 +2,12 @@
   const desc1 = '이 페이지를 통해 현재 사용 중인 PC의 IP 주소 및 위치 정보를 확인할 수 있습니다.\n' +
       '      사무실과 같은 기업은 대부분 공인 IP를 사용하여 IP가 고정됩니다.\n' +
       '      그러나 일반 가정집은 유동 IP를 사용하기 때문에 IP가 변경될 수 있습니다.\n' +
-      '      이 사이트를 통해 IP 주소의 변경 여부를 확인해보세요!'
-  const desc2 = '또한, 현재 접속한 PC의 위치 정보를 확인할 수 있어서 필요하신 분들께 유용할 수 있습니다.\n' +
-      '      아이피 위치 추적도 가능합니다!'
-  const desc3 = 'IP 주소 및 위치 정보 확인은 인터넷 사용 환경과 관련하여 유용한 정보를 제공합니다.\n' +
-      '      개인 정보 보호 및 보안에 주의하여 사용해주세요.'
+      '      이 기능으로 IP 주소의 변경 여부를 확인해보세요!'
 </script>
 
 <template>
   <div class="desc-white-card">
     <div class="definition" v-html="desc1"/>
-    <div class="definition" v-html="desc2"/>
-    <div class="definition" v-html="desc3" />
     <p class="note">
       이 페이지는 사용자의 IP 주소 및 위치 정보를 수집하지 않습니다.
     </p>
