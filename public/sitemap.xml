@@ -46,11 +46,21 @@
   <lastmod>2023-11-15T11:14:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-<url>
-  <loc>https://god-calculator.com/ip/</loc>
-  <lastmod>2023-11-16T14:16:22+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
+  <url>
+    <loc>https://god-calculator.com/ip/</loc>
+    <lastmod>2023-11-16T14:16:22+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://god-calculator.com/bmi/</loc>
+    <lastmod>2023-11-17T16:16:22+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://god-calculator.com/comp-interest/</loc>
+    <lastmod>2023-11-17T16:16:22+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
 <url>
   <loc>https://god-calculator.com/nh/</loc>
   <lastmod>2023-10-25T14:56:27+00:00</lastmod>

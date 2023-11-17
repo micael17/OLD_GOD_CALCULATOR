@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import MenuList from "#c/container/links/menuList.vue";
+
 const drawerRight = ref(false)
 </script>
 
@@ -12,17 +14,11 @@ const drawerRight = ref(false)
           </q-item>
         </q-toolbar-title>
 
-        <!-- PC 메뉴 -->
-        <q-btn-group class="desktop_menu" flat>
-          <q-btn flat padding="xs sm" to="/tax" label="부가세 계산기" />
-          <q-btn flat padding="xs sm" to="/monthlySalary" label="월급 계산기" />
-          <q-btn flat padding="xs sm" to="/annualSalary" label="연봉 계산기" />
-          <q-btn flat padding="xs sm" to="/character" label="글자수세기" />
-          <q-btn flat padding="xs sm" to="/manAge" label="만나이 계산기" />
-          <q-btn flat padding="xs sm" to="/krEnAddr" label="영문주소 변환" />
-          <q-btn flat padding="xs sm" to="/pyeong" label="평수 계산기" />
-          <q-btn flat padding="xs sm" to="/ip" label="내 ip 주소 확인" />
-        </q-btn-group>
+        <div class="desktop_menu">
+          <q-btn-dropdown color="white" label="계산기 메뉴" flat>
+            <menu-list />
+          </q-btn-dropdown>
+        </div>
 
         <!-- 모바일 메뉴 -->
         <q-btn class="mobile_menu" flat @click="drawerRight = !drawerRight" round dense icon="menu" />
@@ -35,53 +31,7 @@ const drawerRight = ref(false)
             :breakpoint="500"
         >
           <q-scroll-area class="fit">
-            <q-list>
-              <q-item clickable v-close-popup tabindex="0" to="/tax">
-                <q-item-section>
-                  <q-item-label>부가세 계산기</q-item-label>
-                </q-item-section>
-              </q-item>
-              <q-item clickable v-close-popup tabindex="1" to="/character">
-                <q-item-section>
-                  <q-item-label>글자수세기</q-item-label>
-                </q-item-section>
-              </q-item>
-              <q-item clickable v-close-popup tabindex="2" to="/monthlySalary">
-                <q-item-section>
-                  <q-item-label>월급 실수령액 계산기</q-item-label>
-                </q-item-section>
-              </q-item>
-              <q-item clickable v-close-popup tabindex="3" to="/annualSalary">
-                <q-item-section>
-                  <q-item-label>연봉 실수령액 계산기</q-item-label>
-                </q-item-section>
-              </q-item>
-              <q-item clickable v-close-popup tabindex="4" to="/manAge">
-                <q-item-section>
-                  <q-item-label>만나이 계산기</q-item-label>
-                </q-item-section>
-              </q-item>
-              <q-item clickable v-close-popup tabindex="5" to="/krEnAddr">
-                <q-item-section>
-                  <q-item-label>한글-영문 주소변환기</q-item-label>
-                </q-item-section>
-              </q-item>
-              <q-item clickable v-close-popup tabindex="6" to="/pyeong">
-                <q-item-section>
-                  <q-item-label>평수 계산기</q-item-label>
-                </q-item-section>
-              </q-item>
-              <q-item clickable v-close-popup tabindex="7" to="/ip">
-                <q-item-section>
-                  <q-item-label>내 ip 주소 확인</q-item-label>
-                </q-item-section>
-              </q-item>
-              <q-item clickable v-close-popup tabindex="99" to="/nh">
-                <q-item-section>
-                  <q-item-label>Nh 계산기</q-item-label>
-                </q-item-section>
-              </q-item>
-            </q-list>
+            <menu-list />
           </q-scroll-area>
         </q-drawer>
       </q-toolbar>

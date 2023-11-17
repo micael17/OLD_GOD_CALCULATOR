@@ -44,8 +44,22 @@
     </div>
     <div class="col q-pa-sm">
       <NuxtLink to="/ip" class="link">
-        <ui-image-card iconName="swap_horiz" text-content="내 ip 주소 확인" />
+        <ui-image-card iconName="dns" text-content="내 ip 주소 확인" />
       </NuxtLink>
+    </div>
+    <div class="col q-pa-sm">
+      <NuxtLink to="/bmi" class="link">
+        <ui-image-card iconName="accessibility_new" text-content="BMI(체질량지수) 계산기" />
+      </NuxtLink>
+    </div>
+  </div>
+  <div class="row q-ma-lg justify-center items-start content-start">
+    <div class="col q-pa-sm">
+      <NuxtLink to="/comp-interest" class="link">
+        <ui-image-card iconName="account_balance" text-content="복리 계산기" />
+      </NuxtLink>
+    </div>
+    <div class="col q-pa-sm">
     </div>
     <div class="col q-pa-sm">
     </div>

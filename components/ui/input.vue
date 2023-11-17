@@ -3,7 +3,7 @@ defineProps<{
   title: string
   placeHolder?: string
   type?: string
-  modelValue: string
+  modelValue: string | number
   postfix?: string
   label?: string
   hint?: string
