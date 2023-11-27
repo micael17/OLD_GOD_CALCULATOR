@@ -120,7 +120,7 @@ const getShortUrl = () => {
             :rules="[val => !!val || 'URL을 입력해주세요.']"
           />
           <div class="q-pa-md q-gutter-sm row justify-evenly">
-            <q-btn label="변환하기"  @click="getShortUrl" color="primary" size="lg"/>
+            <q-btn label="변환하기"  @click="buttonClickHandler" color="primary" size="lg"/>
           </div>
           <hr>
 
