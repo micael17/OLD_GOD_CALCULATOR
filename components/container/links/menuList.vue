@@ -53,6 +53,11 @@
         <q-item-label>복리 계산기</q-item-label>
       </q-item-section>
     </q-item>
+    <q-item clickable v-close-popup tabindex="10" to="/comp-interest">
+      <q-item-section>
+        <q-item-label>단축 URL 만들기</q-item-label>
+      </q-item-section>
+    </q-item>
     <q-item clickable v-close-popup tabindex="99" to="/nh">
       <q-item-section>
         <q-item-label>Nh 계산기</q-item-label>

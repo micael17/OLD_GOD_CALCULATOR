@@ -60,6 +60,9 @@
       </NuxtLink>
     </div>
     <div class="col q-pa-sm">
+      <NuxtLink to="/shortUrl" class="link">
+        <ui-image-card iconName="dns" text-content="단축 URL 만들기" />
+      </NuxtLink>
     </div>
     <div class="col q-pa-sm">
     </div>
