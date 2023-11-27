@@ -93,7 +93,6 @@ const getShortUrl = () => {
     </div>
     <div class="row q-ma-lg">
       <div class="col">
-        <ui-desc-white-card />
       </div>
     </div>
   </q-page>
