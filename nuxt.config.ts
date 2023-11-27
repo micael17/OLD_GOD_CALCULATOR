@@ -5,9 +5,9 @@ const analyticsSrc = 'https://www.googletagmanager.com/gtag/js?id=G-EX6TE4V1W3'
 
 export default defineNuxtConfig({
   runtimeConfig: {
-    addrKey: 'U01TX0FVVEgyMDIzMTEwNjEwMTQxOTExNDI0MzM=',
     public: {
-      addrKey: 'U01TX0FVVEgyMDIzMTEwNjEwMTQxOTExNDI0MzM='
+      addrKey: 'U01TX0FVVEgyMDIzMTEwNjEwMTQxOTExNDI0MzM=',
+      youtubeKey: 'AIzaSyBHHWPAgAWljy6pJ8Gv-_cH2RUq2IHuhm0'
     }
   },
   modules: [
