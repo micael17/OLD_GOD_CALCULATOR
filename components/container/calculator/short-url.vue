@@ -1,18 +1,4 @@
 <script setup lang="ts">
-useHead({
-  title: '단축 URL 만들기 - 만능계산기',
-  meta: [
-    {name: 'author', content: 'JHK'},
-    {name: 'keywords', content: '단축 URL 만들기,짧은 URL 만들기,단축 URL 변환,짧은 URL 변환,네이버 단축 URL'},
-    {name: 'description', content: '입력한 주소를 짧게 변환해주는 URL 변환기 입니다. 네이버 API를 사용했습니다. 단축 URL 만들기 - 만능계산기에서 확인하세요.'},
-    {name: 'og:locale', content: 'ko_KR'},
-    {name: 'og:type', content: 'website'},
-    {name: 'og:title', content: '단축 URL 만들기 - 만능계산기'},
-    {name: 'og:description', content: '입력한 주소를 짧게 변환해주는 URL 변환기 입니다. 네이버 API를 사용했습니다. 단축 URL 만들기 - 만능계산기에서 확인하세요.'},
-    {name: 'og:url', content: 'https://god-caclulator.com/shortUrl'},
-    {name: 'og:site_name', content: '만능 계산기'},
-  ],
-})
 
 const originUrl = ref('')
 const shortUrl = ref('')
@@ -94,61 +80,42 @@ const getShortUrl = () => {
       }).catch(e => {
     console.log(e)
   }).finally(() => loading.value = false)
+}
 
-  // fetch(`${myServer}/${api}?url=${originUrl.value}`, {
-  //   method: 'GET',
-  //   headers: {
-  //     'origin': 'https://god-caclulator.com',
-  //     'Content-Type': 'application/json',
-  //     'X-Naver-Client-Id': 'zGSqm9ZT8a6IngXswpbt',
-  //     'X-Naver-Client-Secret': 'vo3G6oeWK8'
-  //   }
-  // })
-  // .then(response => response.json())
-  // .then(data => {
-  //   console.log('data: ', data)
-  //   shortUrl.value = data.result.url;
-  // }).catch(e => {
-  //   console.log(e)
-  // }).finally(() => loading.value = false)
+const onReset = () => {
+  originUrl.value = ''
+  shortUrl.value = ''
 }
 </script>
 
 <template>
-  <q-page>
-    <div class="row q-ma-lg justify-center items-start content-start">
-      <div class="col">
-        <q-form>
-          <h4>단축 URL 만들기</h4>
-          <hr>
-          <ui-input
-              title=""
-            v-model="originUrl"
-            label="원본 URL"
-            hint="변환하려는 원본 URL을 입력하세요, ex) http://my-site.com."
-            lazy-rules
-            :rules="[val => !!val || 'URL을 입력해주세요.']"
-          />
-          <div class="q-pa-md q-gutter-sm row justify-evenly">
-            <q-btn label="변환하기"  @click="buttonClickHandler" color="primary" size="lg"/>
-          </div>
-          <hr>
+  <q-form
+      @submit="getShortUrl"
+      @reset="onReset"
+  >
+    <h4>단축 URL 만들기</h4>
+    <hr>
+    <ui-input
+        title="원본 URL"
+        v-model="originUrl"
+        hint="변환하려는 원본 URL을 입력하세요, ex) http://my-site.com."
+        lazy-rules
+        :rules="[val => !!val || 'URL을 입력해주세요.']"
+    />
 
-          <h4 class="relative-position">
-            <q-inner-loading :showing="loading">
-              <q-spinner-gears size="50px" color="primary" />
-            </q-inner-loading>
-            {{ shortUrl }}
-          </h4>
-        </q-form>
-      </div>
+    <div class="q-pa-md q-gutter-sm row justify-evenly">
+      <q-btn label="변환하기" type="submit"  @click="buttonClickHandler" color="primary" size="lg"/>
+      <q-btn label="초기화" type="reset" color="white" text-color="black" size="lg" class="q-ml-sm" />
     </div>
-    <div class="row q-ma-lg">
-      <div class="row q-ma-lg">
-        <container-desc-short-url />
-      </div>
-    </div>
-  </q-page>
+    <hr>
+
+    <h4 class="relative-position">
+      <q-inner-loading :showing="loading">
+        <q-spinner-gears size="50px" color="primary" />
+      </q-inner-loading>
+      {{ shortUrl }}
+    </h4>
+  </q-form>
 </template>
 
 <style scoped>

@@ -32,7 +32,9 @@ const getBMIDescription = (bmi: string | number) => {
 <template>
   <div class="row q-ma-lg justify-center items-start content-start">
     <div class="col q-ma-md">
-      <q-form>
+      <q-form
+        @submit="calculateBMI"
+      >
         <h4>BMI 지수 계산</h4>
         <ui-input
             title="몸무게(kg)"
@@ -46,7 +48,7 @@ const getBMIDescription = (bmi: string | number) => {
         />
 
         <div class="q-pa-md q-gutter-sm row justify-evenly">
-          <q-btn label="계산 (엔터)"  @click="calculateBMI" color="primary" size="lg"/>
+          <q-btn label="계산 (엔터)" type="submit" color="primary" size="lg"/>
         </div>
 
         <div>

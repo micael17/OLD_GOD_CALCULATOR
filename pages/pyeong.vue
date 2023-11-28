@@ -68,17 +68,17 @@ const onReset = () => {
 }
 
 useHead({
-  title: '평수 계산기 - 만능계산기',
+  title: '평수 계산기 - 갓 계산기',
   meta: [
     {name: 'author', content: 'JHK'},
     {name: 'keywords', content: '평수 변환, 평 계산, 평형 계산, 아파트 평수 계산, 아파트 제곱미터, 평 제곱미터 변환, 제곱미터 평 변환, 아파트, 평, 제곱미터, 변환'},
     {name: 'description', content: '평수를 제곱미터로 또는 제곱미터를 평수로 변환하는 계산기입니다.'},
     {name: 'og:locale', content: 'ko_KR'},
     {name: 'og:type', content: 'website'},
-    {name: 'og:title', content: '평수 계산기 - 만능계산기'},
+    {name: 'og:title', content: '평수 계산기 - 갓 계산기'},
     {name: 'og:description', content: '평수를 제곱미터로 또는 제곱미터를 평수로 변환하는 계산기입니다.'},
     {name: 'og:url', content: 'https://god-caclulator.com/pyeong'},
-    {name: 'og:site_name', content: '만능 계산기'},
+    {name: 'og:site_name', content: '갓 계산기'},
   ],
 })
 </script>

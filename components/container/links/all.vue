@@ -60,8 +60,13 @@
       </NuxtLink>
     </div>
     <div class="col q-pa-sm">
-      <NuxtLink to="/shortUrl" class="link">
+      <NuxtLink to="/short-url" class="link">
         <ui-image-card iconName="dns" text-content="단축 URL 만들기" />
+      </NuxtLink>
+    </div>
+    <div class="col q-pa-sm">
+      <NuxtLink to="/qr" class="link">
+        <ui-image-card iconName="qr_code" text-content="QR 코드 생성기" />
       </NuxtLink>
     </div>
     <div class="col q-pa-sm">

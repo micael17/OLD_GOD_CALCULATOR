@@ -54,7 +54,9 @@ const calculateCompoundInterest = () => {
   <div>
     <div class="row q-ma-lg justify-center items-start content-start">
       <div class="col q-ma-md">
-        <q-form>
+        <q-form
+          @submit="calculateCompoundInterest"
+        >
           <h4>복리 계산기</h4>
           <hr>
           <ui-input
@@ -81,7 +83,7 @@ const calculateCompoundInterest = () => {
           />
 
           <div class="q-pa-md q-gutter-sm row justify-evenly">
-            <q-btn label="계산"  @click="calculateCompoundInterest" color="primary" size="lg"/>
+            <q-btn label="계산" type="submit" color="primary" size="lg"/>
           </div>
         </q-form>
       </div>

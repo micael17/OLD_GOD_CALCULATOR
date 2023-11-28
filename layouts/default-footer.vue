@@ -5,7 +5,7 @@
   <q-footer elevated class="row justify-center items-start content-start bg-grey-8 text-white">
     <q-toolbar>
       <q-toolbar-title>
-        <div class="footer">Copyright © 만능계산기. All rights reserved.</div>
+        <div class="footer">Copyright © 갓 계산기. All rights reserved.</div>
       </q-toolbar-title>
     </q-toolbar>
   </q-footer>

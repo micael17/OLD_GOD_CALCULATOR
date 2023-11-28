@@ -23,17 +23,17 @@ const onReset = () => {
 }
 
 useHead({
-  title: '영문주소 변환기 - 만능계산기',
+  title: '영문주소 변환기 - 갓 계산기',
   meta: [
     {name: 'author', content: 'JHK'},
     {name: 'keywords', content: '영문주소 변환, 한글주소 변환, 영문주소, 영어주소, 주소 변환, 주소, 검색'},
     {name: 'description', content: '한국의 주소를 영문으로 변환해주는 변환기. 지번주소, 도로명 주소, 우편번호를 검색할 수 있습니다.'},
     {name: 'og:locale', content: 'ko_KR'},
     {name: 'og:type', content: 'website'},
-    {name: 'og:title', content: '영문주소 변환기 - 만능계산기'},
+    {name: 'og:title', content: '영문주소 변환기 - 갓 계산기'},
     {name: 'og:description', content: '한국의 주소를 영문으로 변환해주는 변환기. 지번주소, 도로명 주소, 우편번호를 검색할 수 있습니다.'},
     {name: 'og:url', content: 'https://god-caclulator.com/krEnAddr'},
-    {name: 'og:site_name', content: '만능 계산기'},
+    {name: 'og:site_name', content: '갓 계산기'},
   ],
 })
 </script>

@@ -53,9 +53,14 @@
         <q-item-label>복리 계산기</q-item-label>
       </q-item-section>
     </q-item>
-    <q-item clickable v-close-popup tabindex="10" to="/comp-interest">
+    <q-item clickable v-close-popup tabindex="10" to="/short-url">
       <q-item-section>
         <q-item-label>단축 URL 만들기</q-item-label>
+      </q-item-section>
+    </q-item>
+    <q-item clickable v-close-popup tabindex="11" to="/qr">
+      <q-item-section>
+        <q-item-label>QR 코드 생성기</q-item-label>
       </q-item-section>
     </q-item>
     <q-item clickable v-close-popup tabindex="99" to="/nh">
