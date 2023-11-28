@@ -144,7 +144,8 @@ const getShortUrl = () => {
       </div>
     </div>
     <div class="row q-ma-lg">
-      <div class="col">
+      <div class="row q-ma-lg">
+        <container-desc-short-url />
       </div>
     </div>
   </q-page>
