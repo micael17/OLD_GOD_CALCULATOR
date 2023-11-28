@@ -78,9 +78,10 @@ const getShortUrl = () => {
   }
 
   const myServer = 'https://port-0-proxy-server-1gksli2alphthbi3.sel5.cloudtype.app/' || 'https://port-0-cors-5mk12alpglyfww.sel5.cloudtype.app'
+  const route = '/proxy/shortUrl'
   const api = 'https://openapi.naver.com/v1/util/shorturl'
 
-  fetch(`${myServer}?api=${api}&url=${originUrl.value}`, {
+  fetch(`${myServer}${route}?api=${api}&url=${originUrl.value}`, {
     method: 'GET',
     headers: {
       'origin': 'https://god-caclulator.com',
