@@ -20,7 +20,7 @@ useHead({
   <q-page>
     <div class="row q-ma-lg justify-center items-start content-start">
       <div class="col q-ma-md">
-        <containter-calculator-qr />
+        <container-calculator-qr />
       </div>
     </div>
     <div class="row q-ma-lg">
