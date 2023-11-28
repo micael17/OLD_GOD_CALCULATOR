@@ -15,7 +15,7 @@ const drawerRight = ref(false)
         </q-toolbar-title>
 
         <div class="desktop_menu">
-          <q-btn-dropdown color="white" label="계산기 메뉴" flat>
+          <q-btn-dropdown color="white" size="lg" label="계산기 메뉴" flat>
             <menu-list />
           </q-btn-dropdown>
         </div>

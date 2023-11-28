@@ -69,7 +69,5 @@
         <ui-image-card iconName="qr_code" text-content="QR 코드 생성기" />
       </NuxtLink>
     </div>
-    <div class="col q-pa-sm">
-    </div>
   </div>
 </template>
