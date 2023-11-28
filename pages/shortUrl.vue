@@ -77,25 +77,39 @@ const getShortUrl = () => {
     return;
   }
 
-  const myServer = 'https://port-0-cors-5mk12alpglyfww.sel5.cloudtype.app'
+  const myServer = 'https://port-0-proxy-server-1gksli2alphthbi3.sel5.cloudtype.app/' || 'https://port-0-cors-5mk12alpglyfww.sel5.cloudtype.app'
   const api = 'https://openapi.naver.com/v1/util/shorturl'
 
-  fetch(`${myServer}/${api}?url=${originUrl.value}`, {
+  fetch(`${myServer}?api=${api}&url=${originUrl.value}`, {
     method: 'GET',
     headers: {
       'origin': 'https://god-caclulator.com',
-      'Content-Type': 'application/json',
-      'X-Naver-Client-Id': 'zGSqm9ZT8a6IngXswpbt',
-      'X-Naver-Client-Secret': 'vo3G6oeWK8'
     }
   })
-  .then(response => response.json())
-  .then(data => {
-    console.log('data: ', data)
-    shortUrl.value = data.result.url;
-  }).catch(e => {
+      .then(response => response.json())
+      .then(data => {
+        console.log('data: ', data)
+        shortUrl.value = data.result.url;
+      }).catch(e => {
     console.log(e)
   }).finally(() => loading.value = false)
+
+  // fetch(`${myServer}/${api}?url=${originUrl.value}`, {
+  //   method: 'GET',
+  //   headers: {
+  //     'origin': 'https://god-caclulator.com',
+  //     'Content-Type': 'application/json',
+  //     'X-Naver-Client-Id': 'zGSqm9ZT8a6IngXswpbt',
+  //     'X-Naver-Client-Secret': 'vo3G6oeWK8'
+  //   }
+  // })
+  // .then(response => response.json())
+  // .then(data => {
+  //   console.log('data: ', data)
+  //   shortUrl.value = data.result.url;
+  // }).catch(e => {
+  //   console.log(e)
+  // }).finally(() => loading.value = false)
 }
 </script>
 
