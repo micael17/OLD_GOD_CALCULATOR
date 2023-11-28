@@ -20,7 +20,13 @@ export default defineNuxtConfig({
     '#c': path.resolve(__dirname, './components')
   },
   css: ['#s/base.css', '#s/font.css', '#s/class.css', '#s/media.css'],
-  quasar: {},
+  quasar: {
+    config: {
+      brand: {
+        primary: '#4e54c8',
+      }
+    }
+  },
   app: {
     head: {
       script: [{ //구글 애널리틱스 설정
