@@ -13,6 +13,9 @@ export default defineNuxtConfig({
   modules: [
       'nuxt-quasar-ui'
   ],
+  plugins: [
+    { src: '~/plugins/i18n.ts' }
+  ],
   devtools: { enabled: true },
   alias: {
     '#d': path.resolve(__dirname, './assets/domain'),
