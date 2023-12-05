@@ -10,7 +10,7 @@ const drawerRight = ref(false)
       <q-toolbar>
         <q-toolbar-title class="title row col">
           <q-item class="link" to="/">
-            <q-icon name="calculate" size="xl" style="padding-bottom: 0.1rem;"/>갓 계산기
+            <q-icon name="calculate" size="xl" style="padding-bottom: 0.1rem;"/>{{ $t('title') }}
           </q-item>
         </q-toolbar-title>
 
